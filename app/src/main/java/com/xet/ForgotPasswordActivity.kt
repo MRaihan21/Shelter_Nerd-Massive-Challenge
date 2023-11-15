@@ -23,7 +23,9 @@ class ForgotPasswordActivity : AppCompatActivity() {
         }
 
         binding.btnLanj.setOnClickListener {
-            Toast.makeText(this@ForgotPasswordActivity, "Reset Password Berhasil", Toast.LENGTH_SHORT).show()
+            val intent = Intent(this, CodeActivity::class.java)
+            startActivity(intent)
+//            Toast.makeText(this@ForgotPasswordActivity, "Reset Password Berhasil", Toast.LENGTH_SHORT).show()
 
         }
     }

@@ -91,9 +91,9 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Konfirmasi Password"
+            android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:textColor="@color/black"/>
+            android:textColor="@color/black" />
 
     </com.google.android.material.textfield.TextInputLayout>
 
