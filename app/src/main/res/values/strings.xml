@@ -1,3 +1,6 @@
 <resources>
-    <string name="app_name">massive_project</string>
+    <string name="app_name">MyApp</string>
+    <string name="hello_world">Hello, World!</string>
+    <string name="app_name2">MiAplicación</string>
+    <string name="hello_world2">¡Hola, mundo!</string>
 </resources>

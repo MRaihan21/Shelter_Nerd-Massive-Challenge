@@ -12,6 +12,27 @@
         android:theme="@style/Theme.Massive_project"
         tools:targetApi="31">
         <activity
+            android:name=".chat"
+            android:exported="false" />
+        <activity
+            android:name=".account"
+            android:exported="false" />
+        <activity
+            android:name=".transactionhistory"
+            android:exported="false" />
+        <activity
+            android:name=".feedbacks"
+            android:exported="false" />
+        <activity
+            android:name=".change_language"
+            android:exported="false" />
+        <activity
+            android:name=".SettingActivity"
+            android:exported="false" />
+        <activity
+            android:name=".FollowingActivity"
+            android:exported="false" />
+        <activity
             android:name=".profile_activity"
             android:exported="false" />
         <activity
