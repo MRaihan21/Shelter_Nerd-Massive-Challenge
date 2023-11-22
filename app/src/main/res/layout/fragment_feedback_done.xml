@@ -4,16 +4,17 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".NotfitikasiFragment">
+    tools:context=".ui.profile.myprofile.FeedbackDoneFragment">
 
     <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
+        android:id="@+id/toolbar_feedback"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:popupTheme="@style/AppTheme">
+
 
         <ImageView
             android:id="@+id/iv_arrow_back"
@@ -28,7 +29,7 @@
             android:id="@+id/tv_payment"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Notification"
+            android:text="Feedback"
             android:layout_gravity="center_horizontal"
             android:textSize="20sp"
             android:textStyle="bold"
@@ -39,11 +40,12 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Kosong"
-        android:textSize="18sp"
+        android:text="Thank you! we have  received your\n feedback:)"
+        android:textAlignment="center"
+        android:textSize="16sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/toolbar_feedback" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

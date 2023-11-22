@@ -15,51 +15,41 @@ import androidx.lifecycle.Lifecycle
 import androidx.navigation.fragment.findNavController
 import com.xet.R
 import com.xet.databinding.FragmentFeedbackBinding
+import com.xet.ui.profile.ProfileFragmentDirections
 
 class FeedbackFragment : Fragment() {
 
     private var _binding : FragmentFeedbackBinding? = null
 
-    private val binding get() = _binding
+    private val binding get() = _binding!!
 
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_feedback, container, false)
+    ): View {
+        _binding = FragmentFeedbackBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        setUpToolbar()
+        binding.apply {
+            btnSubmit.setOnClickListener {
+                moveSubmit()
+            }
+        }
 
+    }
+
+    fun moveSubmit(){
+        val action = FeedbackFragmentDirections.actionFeedbackFragmentToFeedbackDoneFragment()
+        findNavController().navigate(action)
     }
 
     override fun onDestroy() {
         super.onDestroy()
         _binding = null
     }
-
-    private fun setUpToolbar() {
-        (activity as AppCompatActivity).apply {
-            setSupportActionBar(binding?.toolbarFeedback)
-            supportActionBar?.apply {
-                setDisplayHomeAsUpEnabled(true)
-            }
-        }
-        val menuHost: MenuHost = requireActivity()
-        menuHost.addMenuProvider(object : MenuProvider {
-            override fun onCreateMenu(menu: Menu, menuInflater: MenuInflater) {}
-
-            override fun onMenuItemSelected(menuItem: MenuItem): Boolean {
-                findNavController().navigateUp()
-                return true
-            }
-        }, viewLifecycleOwner, Lifecycle.State.CREATED)
-
-    }
-
-
 
 }

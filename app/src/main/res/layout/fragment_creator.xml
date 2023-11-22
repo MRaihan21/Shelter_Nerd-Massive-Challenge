@@ -120,7 +120,7 @@
         app:layout_constraintVertical_bias="0.584" />
 
     <Button
-        android:id="@+id/myTextButton1"
+        android:id="@+id/btn_message"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"

@@ -74,7 +74,11 @@
         android:id="@+id/feedbackFragment"
         android:name="com.xet.ui.profile.myprofile.FeedbackFragment"
         android:label="fragment_feedback"
-        tools:layout="@layout/fragment_feedback" />
+        tools:layout="@layout/fragment_feedback" >
+        <action
+            android:id="@+id/action_feedbackFragment_to_feedbackDoneFragment"
+            app:destination="@id/feedbackDoneFragment" />
+    </fragment>
     <fragment
         android:id="@+id/languageFragment"
         android:name="com.xet.ui.profile.myprofile.LanguageFragment"
@@ -130,7 +134,20 @@
         <action
             android:id="@+id/action_creatorFragment_to_followingFragment"
             app:destination="@id/followingFragment" />
+        <action
+            android:id="@+id/action_creatorFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/feedbackDoneFragment"
+        android:name="com.xet.ui.profile.myprofile.FeedbackDoneFragment"
+        android:label="fragment_feedback_done"
+        tools:layout="@layout/fragment_feedback_done" />
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.xet.ChatFragment"
+        android:label="fragment_chat"
+        tools:layout="@layout/fragment_chat" />
 
 
 </navigation>

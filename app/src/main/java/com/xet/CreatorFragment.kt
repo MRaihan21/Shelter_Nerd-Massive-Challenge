@@ -34,6 +34,9 @@ class CreatorFragment : Fragment() {
             btnFollow.setOnClickListener {
                 moveFollowing()
             }
+            btnMessage.setOnClickListener {
+                moveMessage()
+            }
         }
     }
 
@@ -41,5 +44,10 @@ class CreatorFragment : Fragment() {
         val action = CreatorFragmentDirections.actionCreatorFragmentToFollowingFragment()
         findNavController().navigate(action)
         }
+
+    private fun moveMessage(){
+        val action = CreatorFragmentDirections.actionCreatorFragmentToChatFragment()
+        findNavController().navigate(action)
+    }
 
 }
