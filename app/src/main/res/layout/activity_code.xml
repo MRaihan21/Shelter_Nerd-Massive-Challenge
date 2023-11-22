@@ -34,18 +34,19 @@
 
     </androidx.appcompat.widget.Toolbar>
 
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:text="To ensure your account remains safe,\n please check your account and enter\n the 6 digit code that we have sent. you\n can request a resend code within 30\n seconds"
+        android:layout_marginTop="20dp"
+        android:text=" To ensure your account remains safe,\n please check your account and enter\n the 6 digit code that we have sent. you\n can request a resend code within 30\n seconds"
+        android:textSize="16sp"
         android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.119"
+        app:layout_constraintHorizontal_bias="0.223"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
-
 
     <LinearLayout
         android:id="@+id/linearLayout2"

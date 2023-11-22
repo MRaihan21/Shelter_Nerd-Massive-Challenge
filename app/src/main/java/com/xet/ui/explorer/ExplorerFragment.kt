@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.SearchView
 import android.widget.TextView
 import androidx.lifecycle.ViewModelProvider
+import com.xet.R
 import com.xet.databinding.FragmentExplorerBinding
 
 class ExplorerFragment : Fragment() {
@@ -15,21 +17,25 @@ class ExplorerFragment : Fragment() {
 
     private val binding get() = _binding!!
 
+
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
+
+
         val explorerViewModel =
             ViewModelProvider(this).get(ExplorerViewModel::class.java)
 
         _binding = FragmentExplorerBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-        val texView: TextView = binding.textFollower
-        explorerViewModel.text.observe(viewLifecycleOwner){
-            texView.text = it
-        }
+//        val texView: TextView = binding.textFollower
+//        explorerViewModel.text.observe(viewLifecycleOwner){
+//            texView.text = it
+//        }
         return root
     }
 

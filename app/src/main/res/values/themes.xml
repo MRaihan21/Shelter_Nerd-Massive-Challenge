@@ -1,10 +1,11 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
     <style name="Base.Theme.XET" parent="Theme.Material3.DayNight.NoActionBar">
-        <item name="android:windowBackground">@color/white</item>
+        <item name="android:windowBackground">#F5F5F5</item>
         <item name="colorPrimary">@color/red2</item>
         <item name="fontFamily">@font/poppinsregular</item>
         <item name="android:textColor">@color/black</item>
+        <item name="android:statusBarColor">@color/black</item>
     </style>
 
     <style name="AppTheme" parent="Theme.MaterialComponents.Light.DarkActionBar">
@@ -27,7 +28,8 @@
     <style name="input" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
         <item name="materialThemeOverlay">@style/ThemeOverlay.Material3.TextInputEditText.OutlinedBox</item>
         <item name="boxCollapsedPaddingTop">0dp</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">@color/gray</item>
+        <item name="hintTextColor">@color/gray</item>
         <item name="android:textColorHint">@color/gray</item>
     </style>
 
@@ -54,6 +56,20 @@
         <item name="android:layout_marginStart">10dp</item>
     </style>
 
+    <style name="searchVIewText" parent="Widget.AppCompat.SearchView">
+        <item name="android:textColorHint">@color/black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="SettingButton">
+        <item name="android:layout_marginStart">30dp</item>
+        <item name="android:layout_marginEnd">30dp</item>
+        <item name="android:layout_marginTop">8dp</item>
+        <item name="backgroundTint">@color/Peach</item>
+        <item name="android:textColor">@color/black</item>
+        <item name="iconTint">@color/black</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 
     <style name="Theme.XET" parent="Base.Theme.XET" />

@@ -42,7 +42,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tv_regisTitle"
-        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium">
+        app:boxStrokeColor="@color/text_input_border_color"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium"
+        >
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/email"
@@ -52,7 +54,7 @@
             android:ems="10"
             android:hint="Email"
             android:inputType="text"
-            android:textColor="@color/black" />
+            />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -63,16 +65,19 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputEmail">
+        app:layout_constraintTop_toBottomOf="@+id/inputEmail"
+        app:boxStrokeColor="@color/text_input_border_color"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/input"
             android:id="@+id/pass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:inputType="textPassword"
             android:hint="Password"
-            android:textColor="@color/black"/>
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 
@@ -84,16 +89,19 @@
         android:layout_margin="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/inputPass">
+        app:layout_constraintTop_toBottomOf="@+id/inputPass"
+        app:boxStrokeColor="@color/text_input_border_color"
+        app:shapeAppearance="@style/ShapeAppearance.Material3.Corner.Medium">
 
         <com.google.android.material.textfield.TextInputEditText
+            style="@style/input"
             android:id="@+id/konfPass"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:ems="10"
             android:hint="Confirm Password"
             android:inputType="textPassword"
-            android:textColor="@color/black" />
+            />
 
     </com.google.android.material.textfield.TextInputLayout>
 

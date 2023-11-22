@@ -19,7 +19,7 @@ class LoginActivity : AppCompatActivity() {
         setContentView(view)
 
         binding.btnLogin.setOnClickListener {
-            val intent = Intent(this, MainActivity2::class.java)
+            val intent = Intent(this, MainActivity::class.java)
             startActivity(intent)
             Toast.makeText(this@LoginActivity, "Anda Berhasil Login", Toast.LENGTH_SHORT).show()
         }
