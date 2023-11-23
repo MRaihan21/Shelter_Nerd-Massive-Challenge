@@ -53,6 +53,9 @@
         <action
             android:id="@+id/action_navigation_profile_to_languageFragment"
             app:destination="@id/languageFragment" />
+        <action
+            android:id="@+id/action_navigation_profile_to_detailFeedbackFragment"
+            app:destination="@id/detailFeedbackFragment" />
     </fragment>
 
     <fragment
@@ -148,6 +151,11 @@
         android:name="com.xet.ChatFragment"
         android:label="fragment_chat"
         tools:layout="@layout/fragment_chat" />
+    <fragment
+        android:id="@+id/detailFeedbackFragment"
+        android:name="com.xet.ui.profile.myprofile.DetailFeedbackFragment"
+        android:label="fragment_detail_feedback"
+        tools:layout="@layout/fragment_detail_feedback" />
 
 
 </navigation>

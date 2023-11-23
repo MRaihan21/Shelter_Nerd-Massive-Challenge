@@ -59,12 +59,15 @@ class ProfileFragment : Fragment() {
             btnChangePassword.setOnClickListener{
                 moveChangePassword()
             }
-            btnLanguage.setOnClickListener {
-                moveLangueage()
-            }
+//            btnLanguage.setOnClickListener {
+//                moveLangueage()
+//            }
             btnLogout.setOnClickListener {
                 val intent = Intent(requireContext(), LoginActivity::class.java)
                 startActivity(intent)
+            }
+            editeProfile.setOnClickListener {
+                moveEditProfile()
             }
         }
     }
@@ -92,6 +95,11 @@ class ProfileFragment : Fragment() {
 
     private fun moveLangueage(){
         val action = ProfileFragmentDirections.actionNavigationProfileToLanguageFragment()
+        findNavController().navigate(action)
+    }
+
+    private fun moveEditProfile(){
+        val action = ProfileFragmentDirections.actionNavigationProfileToDetailProfileFragment()
         findNavController().navigate(action)
     }
 

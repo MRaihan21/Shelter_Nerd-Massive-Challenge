@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".ui.profile.ProfileFragment">
 
-    <LinearLayout
-        android:id="@+id/relativeLayout"
+    <FrameLayout
+        android:id="@+id/edite_profile"
         android:background="@color/red"
         android:layout_width="match_parent"
         android:layout_height="80dp"
@@ -32,12 +32,22 @@
             android:text="Gatot"
             android:textColor="@color/white"
             android:textStyle="bold"
-            android:layout_gravity="center"
-            android:layout_marginStart="16dp"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="100dp"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Edit Profile"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            android:layout_gravity="center|start"
+            android:layout_marginStart="270dp"
             />
 
 
-    </LinearLayout>
+    </FrameLayout>
 
 
     <TextView
@@ -50,7 +60,7 @@
         android:textSize="14sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/relativeLayout" />
+        app:layout_constraintTop_toBottomOf="@+id/edite_profile" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/btn_cretor"
@@ -126,24 +136,12 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
-    <com.google.android.material.button.MaterialButton
-        android:id="@+id/btn_language"
-        style="@style/SettingButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Language"
-        android:textAlignment="textStart"
-        app:icon="@drawable/ic_languagesetting"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_change_password" />
 
     <Button
         android:id="@+id/btn_logout"
         style="@style/SettingButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
         android:text="Log Out"
         android:textColor="@color/white"
         android:textStyle="bold"
@@ -151,6 +149,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.666"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_language" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_change_password" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
