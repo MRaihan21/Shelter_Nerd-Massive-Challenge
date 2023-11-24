@@ -17,17 +17,22 @@
             android:id="@+id/searchBar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginStart="50dp"
-            android:layout_marginTop="16dp"
-            android:layout_marginEnd="50dp"
-            app:searchHintIcon="@color/black"
+            android:layout_marginTop="24dp"
             android:background="@drawable/searchview_background"
-            android:theme="@style/searchVIewText"
+            app:closeIcon="@drawable/ic_baseline_close"
+            app:searchIcon="@drawable/ic_search_24"
             app:iconifiedByDefault="false"
+            app:queryHint="Search"
+            app:queryBackground="@null"
+            android:theme="@style/searchVIewText"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHeight_default="spread"
+            app:layout_constraintHorizontal_bias="0.497"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:queryHint="Search" />
+            android:layout_marginStart="50dp"
+            android:layout_marginEnd="50dp"
+            />
 
         <TextView
             android:id="@+id/textView16"

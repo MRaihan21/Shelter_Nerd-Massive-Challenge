@@ -6,68 +6,80 @@
     android:layout_height="match_parent"
     tools:context=".ui.tiket.TiketFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/my_toolbar"
+<!--    <androidx.appcompat.widget.Toolbar-->
+<!--        android:id="@+id/my_toolbar"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="?attr/actionBarSize"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toTopOf="parent"-->
+<!--        app:popupTheme="@style/AppTheme">-->
+
+<!--        <TextView-->
+<!--            android:id="@+id/iv_arrow_back"-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:text="TICKET"-->
+<!--            android:layout_gravity="center_horizontal"-->
+<!--            android:textSize="20sp"-->
+<!--            android:textStyle="bold"-->
+<!--            />-->
+
+<!--    </androidx.appcompat.widget.Toolbar>-->
+
+    <FrameLayout
+        android:id="@+id/desc_tiket"
         android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
+        android:layout_height="wrap_content"
+        android:background="@color/red"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme">
+        app:layout_constraintTop_toTopOf="parent">
 
         <TextView
-            android:id="@+id/iv_arrow_back"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TICKET"
+            android:text="Boring BosQ?"
+            android:textColor="@color/white"
             android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
+            android:layout_marginTop="16dp"
             android:textStyle="bold"
             />
 
-    </androidx.appcompat.widget.Toolbar>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Booking tiketmu sekarang dan  warnai harimu dengan pengalaman luarbiasa"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginTop="50dp"
+            android:textAlignment="center"
+            android:textColor="@color/white"
+            android:padding="16dp"
+            android:textStyle="bold"
+            android:textSize="12sp"
+            />
 
-    <Button
-        android:id="@+id/btn_event"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/Peach"
-        android:textColor="@color/white"
-        android:text="Event"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
-    <Button
-        android:id="@+id/btn_following"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:backgroundTint="@color/Peach"
-        android:textColor="@color/white"
-        android:text="Following"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.649"
-        app:layout_constraintStart_toEndOf="@+id/btn_event"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+    </FrameLayout>
 
     <Button
         android:id="@+id/btn_all"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textColor="@color/white"
-        android:layout_marginStart="28dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/Peach"
         android:text="All"
+        android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
 
     <Button
         android:id="@+id/btn_ongoing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="20dp"
         android:backgroundTint="@color/red"
         android:text="Ongoing"
         android:textColor="@color/white"
@@ -78,25 +90,29 @@
         android:id="@+id/btn_soon"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/Peach"
-        android:textColor="@color/white"
         android:text="Soon"
-        app:layout_constraintStart_toEndOf="@+id/btn_ongoing"
-        app:layout_constraintTop_toBottomOf="@+id/btn_all" />
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.374"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
 
     <Button
         android:id="@+id/btn_past"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="12dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="32dp"
         android:backgroundTint="@color/Peach"
-        android:textColor="@color/white"
         android:text="Past"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.428"
         app:layout_constraintStart_toEndOf="@+id/btn_soon"
-        app:layout_constraintTop_toBottomOf="@+id/btn_all" />
+        app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
 
     <ImageView
         android:layout_width="wrap_content"

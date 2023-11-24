@@ -54,7 +54,8 @@ class ProfileFragment : Fragment() {
                 moveTransactionHistory()
             }
             btnFeedback.setOnClickListener {
-                moveFeedback()
+                moveDetailFeedback()
+//                moveFeedback()
             }
             btnChangePassword.setOnClickListener{
                 moveChangePassword()
@@ -100,6 +101,10 @@ class ProfileFragment : Fragment() {
 
     private fun moveEditProfile(){
         val action = ProfileFragmentDirections.actionNavigationProfileToDetailProfileFragment()
+        findNavController().navigate(action)
+    }
+    private fun moveDetailFeedback(){
+        val action = ProfileFragmentDirections.actionNavigationProfileToDetailFeedbackFragment()
         findNavController().navigate(action)
     }
 
