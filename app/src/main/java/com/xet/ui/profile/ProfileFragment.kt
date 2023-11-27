@@ -80,11 +80,6 @@ class ProfileFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun moveLangueage(){
-        val action = ProfileFragmentDirections.actionNavigationProfileToLanguageFragment()
-        findNavController().navigate(action)
-    }
-
     private fun moveEditProfile(){
         val action = ProfileFragmentDirections.actionNavigationProfileToDetailProfileFragment()
         findNavController().navigate(action)

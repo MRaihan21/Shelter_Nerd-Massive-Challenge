@@ -27,9 +27,6 @@
             android:name=".CodeActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.explorer.ExplorerFragment"
-            android:exported="false" />
-        <activity
             android:name=".MainActivity"
             android:exported="false"
             android:label="@string/title_activity_main2" />
