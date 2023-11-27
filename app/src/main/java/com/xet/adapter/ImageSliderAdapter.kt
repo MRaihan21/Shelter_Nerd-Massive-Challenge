@@ -4,12 +4,13 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
-import com.xet.databinding.ItemSlideBinding
+import com.xet.data.ImageSliderData
+import com.xet.databinding.ItemImageSliderBinding
 
-class ImageSlideAdapter(private val item: List<ImageData>) : RecyclerView.Adapter<ImageSlideAdapter.ImageViewHolder>(){
-    inner class ImageViewHolder(itemVIew: ItemSlideBinding) : RecyclerView.ViewHolder(itemVIew.root){
+class ImageSlideAdapter(private val item: List<ImageSliderData>) : RecyclerView.Adapter<ImageSlideAdapter.ImageViewHolder>(){
+    inner class ImageViewHolder(itemVIew: ItemImageSliderBinding) : RecyclerView.ViewHolder(itemVIew.root){
         private val binding = itemVIew
-        fun bind(data: ImageData){
+        fun bind(data: ImageSliderData){
             with(binding){
                 Glide.with(itemView)
                     .load(data.imageUrl)
@@ -19,7 +20,7 @@ class ImageSlideAdapter(private val item: List<ImageData>) : RecyclerView.Adapte
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ImageViewHolder {
-        return ImageViewHolder(ItemSlideBinding.inflate(LayoutInflater.from(parent.context), parent, false))
+        return ImageViewHolder(ItemImageSliderBinding.inflate(LayoutInflater.from(parent.context), parent, false))
     }
 
     override fun getItemCount(): Int = item.size

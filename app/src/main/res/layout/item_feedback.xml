@@ -2,63 +2,20 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".ui.profile.myprofile.DetailFeedbackFragment">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar_feedback"
-        android:layout_width="match_parent"
-        android:layout_height="?attr/actionBarSize"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:popupTheme="@style/AppTheme">
-
-
-        <ImageView
-            android:id="@+id/iv_arrow_back"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:clickable="true"
-            android:src="@drawable/arrow_back"
-            android:focusable="true" />
-
-
-        <TextView
-            android:id="@+id/tv_payment"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Feedback"
-            android:layout_gravity="center_horizontal"
-            android:textSize="20sp"
-            android:textStyle="bold"
-            />
-
-    </androidx.appcompat.widget.Toolbar>
 
     <TextView
-        android:id="@+id/tv_reviews"
+        android:id="@+id/tv_date_feedback"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="32dp"
-        android:text="(1 Reviews)"
-        android:textSize="16sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/toolbar_feedback" />
-
-    <TextView
-        android:id="@+id/textView20"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="28dp"
-        android:layout_marginTop="24dp"
+        android:layout_margin="16dp"
         android:text="18 November 2023"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_reviews" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 
     <FrameLayout
@@ -66,62 +23,65 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView20">
+        app:layout_constraintTop_toBottomOf="@+id/tv_date_feedback">
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:padding="24dp"
+            android:padding="16dp"
             android:background="@color/red"
             android:layout_margin="16dp"
             >
 
+            <TextView
+                android:id="@+id/tv_username_feedback"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="28dp"
+                android:layout_marginTop="4dp"
+                android:text="Gatot"
+                android:textColor="@color/white"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
             <ImageView
-                android:id="@+id/imageView9"
+                android:id="@+id/iv_profile_feedback"
                 android:layout_width="40dp"
                 android:layout_height="40dp"
                 android:layout_marginStart="28dp"
                 android:layout_marginTop="24dp"
-                android:src="@drawable/profile"
+                tools:background="@tools:sample/avatars"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
+                app:layout_constraintTop_toTopOf="@id/tv_username_feedback" />
 
-            <TextView
+            <RatingBar
+                android:id="@+id/rb_rattingbar"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
-                android:text="Gatot"
-                android:textColor="@color/white"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <RatingBar
-                android:id="@+id/ratingBar2"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="4dp"
-                android:layout_marginTop="16dp"
+                android:layout_marginTop="4dp"
+                android:isIndicator="true"
                 android:scaleX="0.4"
                 android:scaleY="0.4"
+                android:progressTint="@color/yellow"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
             <TextView
+                android:id="@+id/tv_comment_feedback"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginStart="84dp"
-                android:layout_marginTop="56dp"
+                android:layout_marginTop="52dp"
                 android:text="Sangat menyenangkan, bisa bertemu idola saya!"
-                android:textSize="12sp"
                 android:textColor="@color/white"
-                app:layout_constraintStart_toEndOf="@+id/imageView9"
+                android:textSize="12sp"
+                app:layout_constraintStart_toEndOf="@+id/rb_rattingbar"
                 app:layout_constraintTop_toTopOf="parent" />
 
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
     </FrameLayout>
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

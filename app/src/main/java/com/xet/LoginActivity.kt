@@ -33,10 +33,6 @@ class LoginActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-//        binding.btnGoggle.setOnClickListener{
-//            Toast.makeText(this, "Fitur ini sedang dalam tahap pengembangan", Toast.LENGTH_SHORT).show()
-//
-//        }
 
     }
 }

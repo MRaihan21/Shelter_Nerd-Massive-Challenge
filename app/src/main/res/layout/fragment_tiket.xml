@@ -6,26 +6,6 @@
     android:layout_height="match_parent"
     tools:context=".ui.tiket.TiketFragment">
 
-<!--    <androidx.appcompat.widget.Toolbar-->
-<!--        android:id="@+id/my_toolbar"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="?attr/actionBarSize"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:popupTheme="@style/AppTheme">-->
-
-<!--        <TextView-->
-<!--            android:id="@+id/iv_arrow_back"-->
-<!--            android:layout_width="wrap_content"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:text="TICKET"-->
-<!--            android:layout_gravity="center_horizontal"-->
-<!--            android:textSize="20sp"-->
-<!--            android:textStyle="bold"-->
-<!--            />-->
-
-<!--    </androidx.appcompat.widget.Toolbar>-->
 
     <FrameLayout
         android:id="@+id/desc_tiket"
@@ -63,28 +43,17 @@
     </FrameLayout>
 
     <Button
-        android:id="@+id/btn_all"
+        android:id="@+id/btn_ongoing"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="32dp"
-        android:backgroundTint="@color/Peach"
+        android:backgroundTint="@color/red"
         android:text="All"
         android:textColor="@color/white"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
 
-    <Button
-        android:id="@+id/btn_ongoing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="20dp"
-        android:backgroundTint="@color/red"
-        android:text="Ongoing"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_all" />
 
     <Button
         android:id="@+id/btn_soon"
@@ -93,7 +62,7 @@
         android:layout_marginStart="64dp"
         android:layout_marginTop="32dp"
         android:backgroundTint="@color/Peach"
-        android:text="Soon"
+        android:text="Ongoing"
         android:textColor="@color/white"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.374"
@@ -114,13 +83,25 @@
         app:layout_constraintStart_toEndOf="@+id/btn_soon"
         app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
 
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="24dp"
-        android:src="@drawable/image3"
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ongoing" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_ongoing">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_ticket"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/btn_ongoing"
+            tools:listitem="@layout/item_ticket" />
+
+    </androidx.core.widget.NestedScrollView>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

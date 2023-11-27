@@ -10,44 +10,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <androidx.appcompat.widget.Toolbar
-            android:id="@+id/my_toolbar"
-            android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            style="@style/AppTheme">
-
-            <ImageView
-                android:id="@+id/iv_arrow_back"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:clickable="true"
-                android:src="@drawable/arrow_back"
-                android:focusable="true" />
-
-            <TextView
-                android:id="@+id/tv_categori"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Genre Music"
-                android:layout_gravity="center"
-                android:textStyle="bold"
-                android:textSize="18sp"
-                />
-
-        </androidx.appcompat.widget.Toolbar>
 
         <androidx.appcompat.widget.AppCompatImageView
             android:id="@+id/iv_cover"
             android:layout_width="330dp"
             android:layout_height="250dp"
+            android:layout_margin="16dp"
             android:scaleType="center"
-            android:src="@drawable/cover1"
+            tools:background="@tools:sample/avatars"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
+            app:layout_constraintTop_toTopOf="parent" />
 
 
         <TextView
@@ -201,11 +174,11 @@
 
             <ImageView
                 android:id="@+id/imageView"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
+                android:layout_width="53dp"
+                android:layout_height="53dp"
                 android:layout_marginStart="16dp"
                 android:layout_marginTop="16dp"
-                android:src="@drawable/ic_profile"
+                tools:background="@tools:sample/avatars"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/textView13" />
 

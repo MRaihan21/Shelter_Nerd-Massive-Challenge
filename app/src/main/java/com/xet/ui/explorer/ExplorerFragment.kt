@@ -26,16 +26,10 @@ class ExplorerFragment : Fragment() {
     ): View {
 
 
-        val explorerViewModel =
-            ViewModelProvider(this).get(ExplorerViewModel::class.java)
-
         _binding = FragmentExplorerBinding.inflate(inflater, container, false)
         val root: View = binding.root
 
-//        val texView: TextView = binding.textFollower
-//        explorerViewModel.text.observe(viewLifecycleOwner){
-//            texView.text = it
-//        }
+
         return root
     }
 

@@ -30,20 +30,6 @@ class ProfileFragment : Fragment() {
 
     }
 
-
-
-//        val profileViewModel =
-//            ViewModelProvider(this).get(ProfileViewModel::class.java)
-//
-//        _binding = FragmentProfileBinding.inflate(inflater, container, false)
-//        val root: View = binding.root
-//
-//        val textView: TextView = binding.textNotifications
-//        profileViewModel.text.observe(viewLifecycleOwner) {
-//            textView.text = it
-//        }
-
-
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {

@@ -10,4 +10,28 @@
     <string name="search_bar">search</string>
 
     <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="title_musc">Music</string>
+    <string name="title_japanese">Japanese</string>
+    <string name="title_seminar">Seminar</string>
+    <string name="title_festival">Festival</string>
+
+    <string name="seeAll">See All</string>
+
+    <string name="title_event">Title</string>
+    <string name="price_event">Rp.5.000</string>
+
+    <string name="date_1">18 November 2023</string>
+    <string name="date_2">18 November 2023</string>
+
+    <string name="username1">Tri</string>
+    <string name="username2">Koplo Berjaya</string>
+
+    <string name="comment1">Sangat menyenangkan, bisa bertemu idola saya!</string>
+    <string name="comment2">Event nya sangat menyenangkan, pemesanan tiket disini juga  mudah. </string>
+
+    <string name="ratting1">5.0</string>
+    <string name="ratting2">"4.0</string>
+
+
 </resources>
