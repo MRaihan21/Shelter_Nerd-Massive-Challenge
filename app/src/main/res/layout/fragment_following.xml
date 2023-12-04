@@ -37,90 +37,34 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <ImageButton
-        android:id="@+id/imageButton"
-        android:layout_width="343dp"
-        android:layout_height="50dp"
-        android:layout_marginTop="72dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="ImageButton"
-        android:src="@drawable/search"
+    <androidx.appcompat.widget.SearchView
+        android:id="@+id/searchBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginEnd="20dp"
+        android:background="@drawable/searchview_background"
+        android:theme="@style/searchVIewText"
+        app:closeIcon="@drawable/ic_baseline_close"
+        app:iconifiedByDefault="false"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_default="spread"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar"
-        tools:ignore="MissingConstraints" />
+        app:queryBackground="@null"
+        app:queryHint="Search"
+        app:searchIcon="@drawable/ic_search_24" />
 
-
-    <TextView
-        android:id="@+id/myTextView1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:fontFamily="@font/poppinsbold"
-        android:text="Diurutkan berdasarkan Default"
-        android:textColor="#000000"
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_following"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.157"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton" />
-
-
-    <ImageButton
-        android:id="@+id/imageButton3"
-        android:layout_width="80dp"
-        android:layout_height="54dp"
-        android:layout_marginEnd="48dp"
-        android:background="@android:color/transparent"
-        android:contentDescription="ImageButton"
-        android:src="@drawable/updown"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton"
-        tools:ignore="MissingConstraints" />
-
-
-    <TextView
-        android:id="@+id/myTextView2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:fontFamily="@font/poppinssemibold"
-        android:text="Raihan23"
-        android:textColor="#FF000000"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.249"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.379" />
-
-    <ImageView
-        android:id="@+id/profileImageView4"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="40dp"
-        android:scaleType="centerCrop"
-        android:src="@drawable/user1"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/myTextView1"
-        tools:ignore="DuplicateIds,MissingConstraints" />
-
-
-    <Button
-        android:id="@+id/myTextButton2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="16dp"
-        android:layout_marginTop="36dp"
-        android:layout_marginEnd="32dp"
-        android:background="#B51C1C"
-        android:text="Following"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageButton3"
-        app:layout_constraintVertical_bias="0.029" />
+        app:layout_constraintTop_toBottomOf="@+id/searchBar"
+        tools:listitem="@layout/item_following" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -39,9 +39,6 @@
             android:id="@+id/action_navigation_profile_to_changePasswordFragment"
             app:destination="@id/changePasswordFragment" />
         <action
-            android:id="@+id/action_navigation_profile_to_feedbackFragment"
-            app:destination="@id/feedbackFragment" />
-        <action
             android:id="@+id/action_navigation_profile_to_followingFragment"
             app:destination="@id/followingFragment" />
         <action
@@ -82,10 +79,14 @@
         android:id="@+id/notfitikasiFragment"
         android:name="com.xet.NotfitikasiFragment"
         android:label="fragment_notfitikasi"
-        tools:layout="@layout/fragment_notfitikasi" />
+        tools:layout="@layout/fragment_notfitikasi" >
+        <action
+            android:id="@+id/action_notfitikasiFragment_to_feedbackFragment"
+            app:destination="@id/feedbackFragment" />
+    </fragment>
     <fragment
         android:id="@+id/detailEventFragment"
-        android:name="com.xet.DetailEventFragment"
+        android:name="com.xet.NotfitikasiFragment"
         android:label="DetailEventFragment" >
         <action
             android:id="@+id/action_detailEventFragment_to_paymentFragment"
@@ -123,20 +124,12 @@
         <action
             android:id="@+id/action_creatorFragment_to_followingFragment"
             app:destination="@id/followingFragment" />
-        <action
-            android:id="@+id/action_creatorFragment_to_chatFragment"
-            app:destination="@id/chatFragment" />
     </fragment>
     <fragment
         android:id="@+id/feedbackDoneFragment"
         android:name="com.xet.ui.profile.myprofile.FeedbackDoneFragment"
         android:label="fragment_feedback_done"
         tools:layout="@layout/fragment_feedback_done" />
-    <fragment
-        android:id="@+id/chatFragment"
-        android:name="com.xet.ChatFragment"
-        android:label="fragment_chat"
-        tools:layout="@layout/fragment_chat" />
     <fragment
         android:id="@+id/detailFeedbackFragment"
         android:name="com.xet.ui.profile.myprofile.DetailFeedbackFragment"

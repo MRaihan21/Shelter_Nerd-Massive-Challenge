@@ -1,9 +1,11 @@
-package com.xet
+package com.xet.ui.splashscreen
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
+import com.xet.LoginActivity
+import com.xet.R
 
 class SplashActivity : AppCompatActivity() {
 

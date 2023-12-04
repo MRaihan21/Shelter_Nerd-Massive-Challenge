@@ -8,6 +8,7 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xet.R
+import com.xet.adapter.TabAdapter
 import com.xet.adapter.TicketAdapter
 import com.xet.data.TicketData
 import com.xet.databinding.FragmentTiketBinding
@@ -20,9 +21,14 @@ class TiketFragment : Fragment() {
     private lateinit var adapterTicket: TicketAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var ticketDataArrayList: ArrayList<TicketData>
+    private lateinit var adapterTab : TabAdapter
 
     lateinit var img: Array<Int>
     lateinit var img2: Array<Int>
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+    }
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -37,13 +43,20 @@ class TiketFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+//        val tabAdapter = TabAdapter(requireContext(), childFragmentManager, 2)
+//        binding.viewPager.adapter = tabAdapter
+//        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
         dataInitialize()
+
         val layoutManager = LinearLayoutManager(context)
         recyclerView = view.findViewById(R.id.rv_ticket)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
         adapterTicket = TicketAdapter(ticketDataArrayList)
         recyclerView.adapter = adapterTicket
+
     }
 
     override fun onDestroyView() {

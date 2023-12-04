@@ -1,5 +1,6 @@
 package com.xet.ui.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.text.Html
 import android.view.LayoutInflater
@@ -13,6 +14,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
+import com.xet.ActivityEVentDetail
 import com.xet.R
 import com.xet.adapter.CategoriesAdapter
 import com.xet.data.CategoriesEventData
@@ -22,10 +24,15 @@ import com.xet.databinding.FragmentHomeBinding
 
 class HomeFragment : Fragment() {
 
+    companion object {
+        val INTENT_PARCELABLE = "OBJECT_INTENT"
+    }
+
     private var _binding: FragmentHomeBinding? = null
     private lateinit var adapterCategories: CategoriesAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var eventArrayList : ArrayList<CategoriesEventData>
+
 
     lateinit var title: Array<String>
     lateinit var seeAll: Array<String>
@@ -35,6 +42,12 @@ class HomeFragment : Fragment() {
     lateinit var titleEvent2 : Array<String>
     lateinit var price1 : Array<String>
     lateinit var price2 : Array<String>
+    lateinit var creatorEvent: Array<String>
+    lateinit var location: Array<String>
+    lateinit var desc: Array<String>
+    lateinit var dateEvent: Array<String>
+    lateinit var time: Array<String>
+    lateinit var type: Array<String>
 
     private val binding get() = _binding!!
     private lateinit var adapterImageSlider: ImageSlideAdapter
@@ -98,8 +111,12 @@ class HomeFragment : Fragment() {
         recyclerView = view.findViewById(R.id.rv_categories)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        adapterCategories = CategoriesAdapter(eventArrayList)
-        recyclerView.adapter = adapterCategories
+        recyclerView.adapter = CategoriesAdapter(eventArrayList)
+        {
+            val intent = Intent(context, ActivityEVentDetail::class.java)
+            intent.putExtra(INTENT_PARCELABLE, it)
+            startActivity(intent)
+        }
 
 
 
@@ -107,18 +124,9 @@ class HomeFragment : Fragment() {
             btnNotif.setOnClickListener {
                 moveNotif()
             }
-
-//            ivImage1.setOnClickListener {
-//                moveDetailEvent()
-//            }
         }
     }
 
-//    private fun showImageSlider(){
-//        val adapter = SliderAdapter {
-//
-//        }
-//    }
 
     private fun selectedDot(position: Int) {
         for (i in 0 until list.size) {
@@ -224,7 +232,51 @@ class HomeFragment : Fragment() {
             R.drawable.ic_festival2,
         )
 
-        for (i in img1.indices) {
+        creatorEvent = arrayOf(
+            "Gatot",
+            "Gatot",
+            "Gatot",
+            "Gatot",
+        )
+
+        location = arrayOf(
+            "Malang",
+            "Medan",
+            "Pekanbaru",
+            "Jakarta",
+        )
+
+        desc = arrayOf(
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
+        )
+
+        dateEvent = arrayOf(
+            "01 Januari 2023",
+            "02 Januari 2023",
+            "03 Januari 2023",
+            "04 Januari 2023",
+        )
+
+        time = arrayOf(
+            "09.00-12.00",
+            "09.00-12.00",
+            "09.00-12.00",
+            "09.00-12.00",
+        )
+
+        type = arrayOf(
+            "Online",
+            "Offline",
+            "Online",
+            "Offline",
+        )
+
+
+
+        for (i in title.indices) {
             val event = CategoriesEventData(
                 title[i],
                 seeAll[i],
@@ -233,13 +285,16 @@ class HomeFragment : Fragment() {
                 price1[i],
                 img2[i],
                 titleEvent2[i],
-                price2[i]
-            )
+                price2[i],
+
+//                creatorEvent[i],
+//                location[i],
+//                desc[i],
+//                dateEvent[i],
+//                time[i],
+//                type[i]
+                )
             eventArrayList.add(event)
         }
-
-
-
     }
-
 }

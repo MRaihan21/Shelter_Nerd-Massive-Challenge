@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.ActivityNavigator
 import androidx.navigation.fragment.findNavController
+import com.xet.ChangePasswordActivity
+import com.xet.ForgotPasswordActivity
 import com.xet.LoginActivity
 import com.xet.databinding.FragmentProfileBinding
 import com.xet.ui.profile.myprofile.ChangePasswordFragment
@@ -33,9 +35,9 @@ class ProfileFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         binding.apply {
-            btnFollowing.setOnClickListener {
-                moveFollowing()
-            }
+//            btnFollowing.setOnClickListener {
+//                moveFollowing()
+//            }
             btnTransaction.setOnClickListener {
                 moveTransactionHistory()
             }
@@ -43,14 +45,15 @@ class ProfileFragment : Fragment() {
                 moveDetailFeedback()
 //                moveFeedback()
             }
-            btnChangePassword.setOnClickListener{
-                moveChangePassword()
-            }
-//            btnLanguage.setOnClickListener {
-//                moveLangueage()
+//            btnChangePassword.setOnClickListener{
+//                moveChangePassword()
 //            }
             btnLogout.setOnClickListener {
                 val intent = Intent(requireContext(), LoginActivity::class.java)
+                startActivity(intent)
+            }
+            btnChangePassword.setOnClickListener {
+                val intent = Intent(requireContext(), ChangePasswordActivity::class.java)
                 startActivity(intent)
             }
             editeProfile.setOnClickListener {
@@ -69,10 +72,7 @@ class ProfileFragment : Fragment() {
         findNavController().navigate(action)
     }
 
-    private fun moveFeedback(){
-        val action = ProfileFragmentDirections.actionNavigationProfileToFeedbackFragment()
-        findNavController().navigate(action)
-    }
+
 
 
     private fun moveChangePassword() {

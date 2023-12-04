@@ -20,6 +20,9 @@ class CodeActivity : AppCompatActivity() {
             val intent = Intent(this, ChangePasswordActivity::class.java)
             startActivity(intent)
         }
+        binding.ivArrowBack.setOnClickListener {
+            finish()
+        }
 
 
     }

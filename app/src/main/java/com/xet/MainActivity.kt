@@ -12,6 +12,10 @@ import com.xet.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
+    companion object {
+        val INTENT_PARCELABLE = "OBJECT_INTENT"
+    }
+
     private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -26,7 +30,9 @@ class MainActivity : AppCompatActivity() {
         navController.addOnDestinationChangedListener{_, navDestination, _, ->
             Handler(Looper.getMainLooper()).post {
                 when(navDestination.id){
-                    R.id.navigation_home, R.id.navigation_tiket, R.id.navigation_profile -> {
+                    R.id.navigation_home,
+                    R.id.navigation_tiket,
+                    R.id.navigation_profile -> {
                         binding.navView.visibility = View.VISIBLE
                     } else ->
                     binding.navView.visibility = View.GONE

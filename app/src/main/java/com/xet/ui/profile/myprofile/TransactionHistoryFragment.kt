@@ -37,7 +37,7 @@ class TransactionHistoryFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTransactionBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -52,6 +52,10 @@ class TransactionHistoryFragment : Fragment() {
         recyclerView.setHasFixedSize(true)
         adapterTransactionHistory = TransactionHistoryAdapter(transactionHistoryList)
         recyclerView.adapter = adapterTransactionHistory
+
+        binding.ivArrowBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
     }
 
     private fun dataInitialize() {

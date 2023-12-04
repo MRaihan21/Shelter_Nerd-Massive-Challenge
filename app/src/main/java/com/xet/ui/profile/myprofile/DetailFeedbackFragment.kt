@@ -53,6 +53,10 @@ class DetailFeedbackFragment : Fragment() {
         adapterDetailFeedback = FeedbackAdapter(feedbackDataArrayList)
         recyclerView.adapter = adapterDetailFeedback
 
+        binding.ivArrowBack.setOnClickListener {
+            requireActivity().supportFragmentManager.popBackStack()
+        }
+
     }
 
     private fun dataInitialize() {

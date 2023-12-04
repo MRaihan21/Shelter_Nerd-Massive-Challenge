@@ -42,66 +42,87 @@
 
     </FrameLayout>
 
-    <Button
-        android:id="@+id/btn_ongoing"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/red"
-        android:text="All"
-        android:textColor="@color/white"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
 
-
-    <Button
-        android:id="@+id/btn_soon"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/Peach"
-        android:text="Ongoing"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.374"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
-
-    <Button
-        android:id="@+id/btn_past"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="12dp"
-        android:layout_marginTop="32dp"
-        android:backgroundTint="@color/Peach"
-        android:text="Past"
-        android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.428"
-        app:layout_constraintStart_toEndOf="@+id/btn_soon"
-        app:layout_constraintTop_toBottomOf="@+id/desc_tiket" />
-
-    <androidx.core.widget.NestedScrollView
+    <com.google.android.material.tabs.TabLayout
+        android:id="@+id/tabLayout"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        app:tabTextColor="@color/black"
+        app:tabSelectedTextAppearance="@drawable/tab_selector"
+        app:layout_constraintTop_toBottomOf="@+id/desc_tiket">
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Event" />
+
+
+        <com.google.android.material.tabs.TabItem
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Following" />
+
+    </com.google.android.material.tabs.TabLayout>
+
+    <HorizontalScrollView
+        android:id="@+id/chips_groupEvent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingHorizontal="20dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btn_ongoing">
+        app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/rv_ticket"
-            android:layout_width="match_parent"
+        <com.google.android.material.chip.ChipGroup
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/btn_ongoing"
-            tools:listitem="@layout/item_ticket" />
-
-    </androidx.core.widget.NestedScrollView>
+            android:backgroundTint="@color/Peach"
+            app:singleSelection="true">
 
 
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.Material3.Chip.Suggestion"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="All"
+                android:backgroundTint="@color/red"
+                android:textColor="@color/white"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.Material3.Chip.Suggestion"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Ongoing"
+                android:backgroundTint="@color/Peach"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textAlignment="center" />
+
+            <com.google.android.material.chip.Chip
+                style="@style/Widget.Material3.Chip.Suggestion"
+                android:layout_width="100dp"
+                android:layout_height="wrap_content"
+                android:text="Past"
+                android:textColor="@color/black"
+                android:backgroundTint="@color/Peach"
+                android:textStyle="bold"
+                android:textAlignment="center"
+                app:rippleColor="@null" />
+        </com.google.android.material.chip.ChipGroup>
+
+    </HorizontalScrollView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_ticket"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/chips_groupEvent"
+        tools:listitem="@layout/item_ticket" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
