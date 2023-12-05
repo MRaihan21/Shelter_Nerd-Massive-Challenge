@@ -34,6 +34,9 @@ class CreatorFragment : Fragment() {
             btnFollow.setOnClickListener {
                 moveFollowing()
             }
+            binding.ivArrowBack.setOnClickListener{
+                requireActivity().supportFragmentManager.popBackStack()
+            }
         }
     }
 

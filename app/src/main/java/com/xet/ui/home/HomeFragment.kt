@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.xet.ActivityEVentDetail
+import com.xet.ActivityEventDetail2
 import com.xet.R
 import com.xet.adapter.CategoriesAdapter
 import com.xet.data.CategoriesEventData
@@ -119,11 +120,19 @@ class HomeFragment : Fragment() {
         }
 
 
+//        binding.ivImageEvent.setOnClickListener {
+//            val intent = Intent(requireContext(), ActivityEventDetail2::class.java)
+//            startActivity(intent)
+//        }
 
         binding.apply {
             btnNotif.setOnClickListener {
                 moveNotif()
             }
+            ivImageEvent.setOnClickListener {
+                moveDetailEvent()
+            }
+
         }
     }
 
@@ -168,7 +177,7 @@ class HomeFragment : Fragment() {
     }
 
     private fun moveDetailEvent(){
-        val action = HomeFragmentDirections.actionNavigationHomeToDetailEventFragment()
+        val action = HomeFragmentDirections.actionNavigationHomeToDetailEventFragment2()
         findNavController().navigate(action)
     }
 
@@ -177,56 +186,56 @@ class HomeFragment : Fragment() {
         eventArrayList = arrayListOf<CategoriesEventData>()
 
         title = arrayOf(
-            getString(R.string.title_musc),
+//            getString(R.string.title_musc),
             getString(R.string.title_japanese),
             getString(R.string.title_seminar),
             getString(R.string.title_festival)
         )
 
         seeAll = arrayOf(
-            getString(R.string.seeAll),
+//            getString(R.string.seeAll),
             getString(R.string.seeAll),
             getString(R.string.seeAll),
             getString(R.string.seeAll)
         )
 
         titleEvent1 = arrayOf(
-            getString(R.string.title_event),
+//            getString(R.string.title_event),
             getString(R.string.title_event),
             getString(R.string.title_event),
             getString(R.string.title_event)
         )
 
         titleEvent2 = arrayOf(
-            getString(R.string.title_event),
+//            getString(R.string.title_event),
             getString(R.string.title_event),
             getString(R.string.title_event),
             getString(R.string.title_event)
         )
 
         price1 = arrayOf(
-            getString(R.string.price_event),
-            getString(R.string.price_event),
-            getString(R.string.price_event),
-            getString(R.string.price_event)
+//            "Rp.100.000",
+            "Rp.50.000",
+            "Free",
+            "Free",
         )
 
         price2 = arrayOf(
-            getString(R.string.price_event),
-            getString(R.string.price_event),
-            getString(R.string.price_event),
-            getString(R.string.price_event)
+//            "Rp.80.000",
+            "Rp.120.000",
+            "Rp.15.000",
+            "Rp.100.000",
         )
 
         img1 = arrayOf(
-            R.drawable.ic_music1,
+//            R.drawable.ic_music1,
             R.drawable.ic_japanese,
             R.drawable.ic_seminar,
             R.drawable.ic_festival,
         )
 
         img2 = arrayOf(
-            R.drawable.ic_music2,
+//            R.drawable.ic_music2,
             R.drawable.ic_japanese2,
             R.drawable.ic_seminar2,
             R.drawable.ic_festival2,

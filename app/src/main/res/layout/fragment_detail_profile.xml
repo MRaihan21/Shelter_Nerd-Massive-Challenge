@@ -41,33 +41,49 @@
         android:id="@+id/imageView2"
         android:layout_width="140dp"
         android:layout_height="140dp"
+        android:layout_marginTop="52dp"
         android:src="@drawable/ic_profile"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
-    <com.google.android.material.button.MaterialButton
+    <EditText
+        android:id="@+id/materialButton"
         style="@style/SettingButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Gatot"
-        app:icon="@drawable/ic_profilesetting"
+        android:hint="Username"
+        android:textColorHint="@color/gray"
+        android:inputType="text"
+        android:textColor="@color/gray"
         android:textAlignment="textStart"
+        app:icon="@drawable/ic_profilesetting"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
-    <com.google.android.material.button.MaterialButton
-        style="@style/SettingButton"
-        android:layout_width="match_parent"
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        style="@style/SettingButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginTop="76dp"-->
+<!--        android:text="Gatot@gmail.com"-->
+<!--        android:textAlignment="textStart"-->
+<!--        app:icon="@drawable/ic_profilesetting"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/imageView2" />-->
+
+    <Button
+        android:id="@+id/btn_edit_profile"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="76dp"
-        android:text="Gatot@gmail.com"
-        android:textAlignment="textStart"
-        app:icon="@drawable/ic_profilesetting"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView2" />
+        android:layout_marginTop="32dp"
+        android:text="Simpan Edit Profile"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="@+id/materialButton"
+        app:layout_constraintStart_toStartOf="@+id/materialButton"
+        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

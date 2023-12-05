@@ -36,54 +36,54 @@
 
     </androidx.appcompat.widget.Toolbar>
 
-    <FrameLayout
-        android:id="@+id/fl_notif"
-        android:layout_width="match_parent"
-        android:layout_height="80dp"
-        android:background="#D4C6C6"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">
-
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-            <ImageView
-                android:id="@+id/iv_profile_notifikasi"
-                android:layout_width="53dp"
-                android:layout_height="53dp"
-                android:layout_margin="16dp"
-                android:src="@drawable/profile"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <TextView
-                android:id="@+id/tv_text_notifikasi"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="8dp"
-                android:text="Event yang sudah kamu ikuti sudah selasai!!\n Silahkan beri rating untuk event ini."
-                android:textSize="11sp"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintStart_toEndOf="@+id/iv_profile_notifikasi"
-                app:layout_constraintTop_toTopOf="@+id/iv_profile_notifikasi"
-                />
-
-
-
-        </androidx.constraintlayout.widget.ConstraintLayout>
-
-    </FrameLayout>
-
-<!--    <TextView-->
-<!--        android:layout_width="wrap_content"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:text="Kosong"-->
-<!--        android:textSize="18sp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
+<!--    <FrameLayout-->
+<!--        android:id="@+id/fl_notif"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="80dp"-->
+<!--        android:background="#D4C6C6"-->
 <!--        app:layout_constraintEnd_toEndOf="parent"-->
 <!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/my_toolbar">-->
+
+<!--        <androidx.constraintlayout.widget.ConstraintLayout-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="match_parent">-->
+
+<!--            <ImageView-->
+<!--                android:id="@+id/iv_profile_notifikasi"-->
+<!--                android:layout_width="53dp"-->
+<!--                android:layout_height="53dp"-->
+<!--                android:layout_margin="16dp"-->
+<!--                android:src="@drawable/profile"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
+
+<!--            <TextView-->
+<!--                android:id="@+id/tv_text_notifikasi"-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:layout_marginStart="8dp"-->
+<!--                android:text="Event yang sudah kamu ikuti sudah selasai!!\n Silahkan beri rating untuk event ini."-->
+<!--                android:textSize="11sp"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintStart_toEndOf="@+id/iv_profile_notifikasi"-->
+<!--                app:layout_constraintTop_toTopOf="@+id/iv_profile_notifikasi"-->
+<!--                />-->
+
+
+
+<!--        </androidx.constraintlayout.widget.ConstraintLayout>-->
+
+<!--    </FrameLayout>-->
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Kosong"
+        android:textSize="18sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

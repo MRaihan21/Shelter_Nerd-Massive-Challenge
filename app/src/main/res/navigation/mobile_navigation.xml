@@ -14,8 +14,8 @@
             android:id="@+id/action_navigation_home_to_notfitikasiFragment"
             app:destination="@id/notfitikasiFragment" />
         <action
-            android:id="@+id/action_navigation_home_to_detailEventFragment"
-            app:destination="@id/detailEventFragment" />
+            android:id="@+id/action_navigation_home_to_detailEventFragment2"
+            app:destination="@id/detailEventFragment2" />
     </fragment>
 
     <fragment
@@ -85,26 +85,15 @@
             app:destination="@id/feedbackFragment" />
     </fragment>
     <fragment
-        android:id="@+id/detailEventFragment"
-        android:name="com.xet.NotfitikasiFragment"
-        android:label="DetailEventFragment" >
-        <action
-            android:id="@+id/action_detailEventFragment_to_paymentFragment"
-            app:destination="@id/paymentFragment" />
-        <action
-            android:id="@+id/action_detailEventFragment_to_locationFragment"
-            app:destination="@id/locationFragment" />
-        <action
-            android:id="@+id/action_detailEventFragment_to_creatorFragment"
-            app:destination="@id/creatorFragment" />
-    </fragment>
-    <fragment
         android:id="@+id/paymentFragment"
         android:name="com.xet.PaymentFragment"
         android:label="fragment_payment"
         tools:layout="@layout/fragment_payment" >
         <action
             android:id="@+id/action_paymentFragment_to_qrCodeFragment"
+            app:destination="@id/qrCodeFragment" />
+        <action
+            android:id="@+id/action_paymentFragment_to_qrCodeFragment2"
             app:destination="@id/qrCodeFragment" />
     </fragment>
     <fragment
@@ -135,6 +124,20 @@
         android:name="com.xet.ui.profile.myprofile.DetailFeedbackFragment"
         android:label="fragment_detail_feedback"
         tools:layout="@layout/fragment_detail_feedback" />
+    <fragment
+        android:id="@+id/detailEventFragment2"
+        android:name="com.xet.DetailEventFragment"
+        android:label="DetailEventFragment" >
+        <action
+            android:id="@+id/action_detailEventFragment2_to_paymentFragment"
+            app:destination="@id/paymentFragment" />
+        <action
+            android:id="@+id/action_detailEventFragment2_to_locationFragment"
+            app:destination="@id/locationFragment" />
+        <action
+            android:id="@+id/action_detailEventFragment2_to_creatorFragment"
+            app:destination="@id/creatorFragment" />
+    </fragment>
 
 
 </navigation>

@@ -37,6 +37,9 @@ class PaymentFragment : Fragment(){
             btnPay.setOnClickListener {
                 moveQrCode()
             }
+            binding.ivArrowBack.setOnClickListener{
+                requireActivity().supportFragmentManager.popBackStack()
+            }
         }
     }
 

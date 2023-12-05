@@ -44,9 +44,7 @@ class TiketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        val tabAdapter = TabAdapter(requireContext(), childFragmentManager, 2)
-//        binding.viewPager.adapter = tabAdapter
-//        binding.tabLayout.setupWithViewPager(binding.viewPager)
+
 
         dataInitialize()
 
@@ -83,7 +81,5 @@ class TiketFragment : Fragment() {
             )
             ticketDataArrayList.add(ticketData)
         }
-
     }
-
 }

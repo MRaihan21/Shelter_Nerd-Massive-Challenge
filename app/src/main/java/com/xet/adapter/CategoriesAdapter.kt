@@ -10,8 +10,8 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xet.R
 import com.xet.data.CategoriesEventData
 
-class CategoriesAdapter(private val eventList: ArrayList<CategoriesEventData>, val listener: (CategoriesEventData)-> Unit):
-    RecyclerView.Adapter<CategoriesAdapter.MyViewHolder>() {
+class CategoriesAdapter(private val eventList: ArrayList<CategoriesEventData>, val listener: (CategoriesEventData)-> Unit)
+    : RecyclerView.Adapter<CategoriesAdapter.MyViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_categories_event, parent, false)
@@ -42,6 +42,7 @@ class CategoriesAdapter(private val eventList: ArrayList<CategoriesEventData>, v
 //        holder.dateEvent.text = currentItem.date
 //        holder.time.text = currentItem.time
 //        holder.type.text = currentItem.type
+//        itemCount
     }
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
@@ -59,7 +60,7 @@ class CategoriesAdapter(private val eventList: ArrayList<CategoriesEventData>, v
         val desc = itemView.findViewById<TextView>(R.id.tv_desc_detail)
         val dateEvent = itemView.findViewById<TextView>(R.id.tv_date)
         val time = itemView.findViewById<TextView>(R.id.tv_time)
-        val type = itemView.findViewById<TextView>(R.id.tv_date)
+        val type = itemView.findViewById<TextView>(R.id.tv_event_type)
 
 
 
@@ -73,8 +74,7 @@ class CategoriesAdapter(private val eventList: ArrayList<CategoriesEventData>, v
 //            itemView.setOnClickListener {
 //                listener(categoriesEventData)
 //            }
-    }
-
+        }
     }
 }
 

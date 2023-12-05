@@ -45,11 +45,9 @@
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tabLayout"
+        android:background="@color/white"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/white"
-        app:tabTextColor="@color/black"
-        app:tabSelectedTextAppearance="@drawable/tab_selector"
         app:layout_constraintTop_toBottomOf="@+id/desc_tiket">
 
         <com.google.android.material.tabs.TabItem
@@ -75,23 +73,26 @@
         app:layout_constraintTop_toBottomOf="@+id/tabLayout">
 
         <com.google.android.material.chip.ChipGroup
+            android:id="@+id/cc_group"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="@color/Peach"
+            android:layout_gravity="center"
             app:singleSelection="true">
 
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/cc_all"
                 style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
                 android:text="All"
-                android:backgroundTint="@color/red"
-                android:textColor="@color/white"
+                android:backgroundTint="@color/Peach"
+                android:textColor="@color/black"
                 android:textStyle="bold"
                 android:textAlignment="center" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/cc_ongoing"
                 style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
@@ -102,6 +103,7 @@
                 android:textAlignment="center" />
 
             <com.google.android.material.chip.Chip
+                android:id="@+id/cc_past"
                 style="@style/Widget.Material3.Chip.Suggestion"
                 android:layout_width="100dp"
                 android:layout_height="wrap_content"
