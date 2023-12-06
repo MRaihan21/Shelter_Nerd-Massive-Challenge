@@ -48,7 +48,7 @@
         app:layout_constraintTop_toBottomOf="@+id/my_toolbar" />
 
     <EditText
-        android:id="@+id/materialButton"
+        android:id="@+id/edt_edit_username"
         style="@style/SettingButton"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -82,8 +82,8 @@
         android:layout_marginTop="32dp"
         android:text="Simpan Edit Profile"
         android:textColor="@color/white"
-        app:layout_constraintEnd_toEndOf="@+id/materialButton"
-        app:layout_constraintStart_toStartOf="@+id/materialButton"
-        app:layout_constraintTop_toBottomOf="@+id/materialButton" />
+        app:layout_constraintEnd_toEndOf="@+id/edt_edit_username"
+        app:layout_constraintStart_toStartOf="@+id/edt_edit_username"
+        app:layout_constraintTop_toBottomOf="@+id/edt_edit_username" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

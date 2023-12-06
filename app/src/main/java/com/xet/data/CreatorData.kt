@@ -5,6 +5,7 @@ import kotlinx.android.parcel.Parcelize
 
 @Parcelize
 data class CreatorData (
-    var imageCreator: Int
+    var imageCreator: Int,
+//    var imageCreator2: Int,
 ): Parcelable
 

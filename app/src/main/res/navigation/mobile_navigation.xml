@@ -55,7 +55,11 @@
         android:id="@+id/detailProfileFragment"
         android:name="com.xet.ui.profile.myprofile.DetailProfileFragment"
         android:label="fragment_detail_profile"
-        tools:layout="@layout/fragment_detail_profile" />
+        tools:layout="@layout/fragment_detail_profile" >
+        <action
+            android:id="@+id/action_detailProfileFragment_to_navigation_profile"
+            app:destination="@id/navigation_profile" />
+    </fragment>
     <fragment
         android:id="@+id/followingFragment"
         android:name="com.xet.ui.profile.myprofile.FollowingFragment"

@@ -8,9 +8,12 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import com.xet.R
 import com.xet.databinding.FragmentDetailProfileBinding
 import com.xet.databinding.FragmentNotfitikasiBinding
+import com.xet.ui.profile.ProfileFragmentDirections
 
 class DetailProfileFragment : Fragment() {
 
@@ -35,6 +38,14 @@ class DetailProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            btnEditProfile.setOnClickListener {
+                moveProfile()
+
+            }
+        }
+
         binding.ivArrowBack.setOnClickListener {
             requireActivity().supportFragmentManager.popBackStack()
         }
@@ -56,6 +67,11 @@ class DetailProfileFragment : Fragment() {
                 selectedImageUrl = url
             }
         }
+    }
+
+    fun moveProfile(){
+        val action = DetailProfileFragmentDirections.actionDetailProfileFragmentToNavigationProfile()
+        findNavController().navigate(action)
     }
 
     override fun onDestroyView() {

@@ -73,6 +73,7 @@
         app:layout_constraintTop_toBottomOf="@+id/btn_follow" />
 
     <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_crator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         tools:listitem="@layout/item_ticket"
