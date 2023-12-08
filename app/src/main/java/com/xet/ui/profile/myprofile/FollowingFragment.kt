@@ -8,7 +8,6 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xet.R
-import com.xet.adapter.CategoriesAdapter
 import com.xet.adapter.FollowingAdapter
 import com.xet.data.FollowingData
 import com.xet.databinding.FragmentFollowingBinding

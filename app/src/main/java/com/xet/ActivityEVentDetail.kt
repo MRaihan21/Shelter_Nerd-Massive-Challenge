@@ -2,12 +2,9 @@ package com.xet
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.util.Log
 import android.widget.Button
-import android.widget.ImageView
 import android.widget.TextView
-import com.xet.data.CategoriesEventData
-import com.xet.databinding.FragmentHomeBinding
+import com.xet.data.CategoriesMusicData
 import com.xet.ui.home.HomeFragment
 
 class ActivityEVentDetail : AppCompatActivity() {
@@ -17,7 +14,7 @@ class ActivityEVentDetail : AppCompatActivity() {
         setContentView(R.layout.activity_event_detail)
 
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        val CategoriesEventData = intent.getParcelableExtra<CategoriesEventData>(HomeFragment.INTENT_PARCELABLE)
+//        val CategoriesMusicData = intent.getParcelableExtra<CategoriesMusicData>(HomeFragment.INTENT_PARCELABLE)
 
 
         val creatorEvent = findViewById<TextView>(R.id.tv_creator)

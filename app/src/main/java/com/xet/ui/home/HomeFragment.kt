@@ -15,34 +15,43 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.xet.ActivityEVentDetail
-import com.xet.ActivityEventDetail2
 import com.xet.R
-import com.xet.adapter.CategoriesAdapter
-import com.xet.data.CategoriesEventData
+import com.xet.adapter.CategoriesFestivalAdapter
+import com.xet.adapter.CategoriesJapaneseAdapter
+import com.xet.adapter.CategoriesMusicAdapter
+import com.xet.adapter.CategoriesSeminarAdapter
+import com.xet.data.CategoriesFestivalData
+import com.xet.data.CategoriesJapaneseData
+import com.xet.data.CategoriesMusicData
+import com.xet.data.CategoriesSeminarData
 import com.xet.data.ImageSliderData
 import com.xet.databinding.FragmentHomeBinding
+import com.xet.ui.home.categories.CategoriesFestival
+import com.xet.ui.home.categories.CategoriesJapanese
+import com.xet.ui.home.categories.CategoriesMusic
+import com.xet.ui.home.categories.CategoriesSeminar
+import java.time.chrono.JapaneseDate
 
 
 class HomeFragment : Fragment() {
 
-    companion object {
-        val INTENT_PARCELABLE = "OBJECT_INTENT"
-    }
-
     private var _binding: FragmentHomeBinding? = null
-    private lateinit var adapterCategories: CategoriesAdapter
     private lateinit var recyclerView: RecyclerView
-    private lateinit var eventArrayList : ArrayList<CategoriesEventData>
 
+    private lateinit var musicArrayList : ArrayList<CategoriesMusicData>
+    private lateinit var japaneseArrayList : ArrayList<CategoriesJapaneseData>
+    private lateinit var seminarArrayList : ArrayList<CategoriesSeminarData>
+    private lateinit var festivalArrayList : ArrayList<CategoriesFestivalData>
 
-    lateinit var title: Array<String>
-    lateinit var seeAll: Array<String>
+    private lateinit var adapterMusic: CategoriesMusicAdapter
+    private lateinit var adapterJapanese: CategoriesJapaneseAdapter
+    private lateinit var adapterSeminar: CategoriesSeminarAdapter
+    private lateinit var adapterFestival: CategoriesFestivalAdapter
+
     lateinit var img1: Array<Int>
-    lateinit var img2: Array<Int>
     lateinit var titleEvent1 : Array<String>
-    lateinit var titleEvent2 : Array<String>
     lateinit var price1 : Array<String>
-    lateinit var price2 : Array<String>
+
     lateinit var creatorEvent: Array<String>
     lateinit var location: Array<String>
     lateinit var desc: Array<String>
@@ -54,6 +63,7 @@ class HomeFragment : Fragment() {
     private lateinit var adapterImageSlider: ImageSlideAdapter
     private val list = ArrayList<ImageSliderData>()
     private lateinit var dots: ArrayList<TextView>
+
     private lateinit var searchView: SearchView
 
 
@@ -108,34 +118,65 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         dataInitialize()
-        val layoutManager = LinearLayoutManager(context)
-        recyclerView = view.findViewById(R.id.rv_categories)
+
+        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView = view.findViewById(R.id.rv_categories_music)
         recyclerView.layoutManager = layoutManager
         recyclerView.setHasFixedSize(true)
-        recyclerView.adapter = CategoriesAdapter(eventArrayList)
-        {
-            val intent = Intent(context, ActivityEVentDetail::class.java)
-            intent.putExtra(INTENT_PARCELABLE, it)
-            startActivity(intent)
-        }
+        adapterMusic = CategoriesMusicAdapter(musicArrayList)
+        recyclerView.adapter = adapterMusic
 
+        dataInitialize2()
 
-//        binding.ivImageEvent.setOnClickListener {
-//            val intent = Intent(requireContext(), ActivityEventDetail2::class.java)
-//            startActivity(intent)
-//        }
+        val layoutManager2 = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView = view.findViewById(R.id.rv_categories_japanese)
+        recyclerView.layoutManager = layoutManager2
+        recyclerView.setHasFixedSize(true)
+        adapterJapanese = CategoriesJapaneseAdapter(japaneseArrayList)
+        recyclerView.adapter = adapterJapanese
+
+        dataInitialize3()
+
+        val layoutManager3 = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView = view.findViewById(R.id.rv_categories_seminar)
+        recyclerView.layoutManager = layoutManager3
+        recyclerView.setHasFixedSize(true)
+        adapterSeminar = CategoriesSeminarAdapter(seminarArrayList)
+        recyclerView.adapter = adapterSeminar
+
+        dataInitialize4()
+
+        val layoutManager4 = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+        recyclerView = view.findViewById(R.id.rv_categories_festival)
+        recyclerView.layoutManager = layoutManager4
+        recyclerView.setHasFixedSize(true)
+        adapterFestival = CategoriesFestivalAdapter(festivalArrayList)
+        recyclerView.adapter = adapterFestival
+
 
         binding.apply {
             btnNotif.setOnClickListener {
                 moveNotif()
             }
-            ivImageEvent.setOnClickListener {
-                moveDetailEvent()
+            tvSeeAll.setOnClickListener {
+                val intent = Intent(requireContext(), CategoriesMusic::class.java)
+                startActivity(intent)
+            }
+            tvSeeAll2.setOnClickListener {
+                val intent = Intent(requireContext(), CategoriesJapanese::class.java)
+                startActivity(intent)
+            }
+            tvSeeAll3.setOnClickListener {
+                val intent = Intent(requireContext(), CategoriesSeminar::class.java)
+                startActivity(intent)
+            }
+            tvSeeAll4.setOnClickListener {
+                val intent = Intent(requireContext(), CategoriesFestival::class.java)
+                startActivity(intent)
             }
 
         }
     }
-
 
     private fun selectedDot(position: Int) {
         for (i in 0 until list.size) {
@@ -183,127 +224,146 @@ class HomeFragment : Fragment() {
 
     private fun dataInitialize(){
 
-        eventArrayList = arrayListOf<CategoriesEventData>()
+        musicArrayList = arrayListOf<CategoriesMusicData>()
 
-        title = arrayOf(
-//            getString(R.string.title_musc),
-            getString(R.string.title_japanese),
-            getString(R.string.title_seminar),
-            getString(R.string.title_festival)
-        )
-
-        seeAll = arrayOf(
-//            getString(R.string.seeAll),
-            getString(R.string.seeAll),
-            getString(R.string.seeAll),
-            getString(R.string.seeAll)
-        )
 
         titleEvent1 = arrayOf(
-//            getString(R.string.title_event),
             getString(R.string.title_event),
             getString(R.string.title_event),
-            getString(R.string.title_event)
-        )
-
-        titleEvent2 = arrayOf(
-//            getString(R.string.title_event),
             getString(R.string.title_event),
             getString(R.string.title_event),
-            getString(R.string.title_event)
         )
 
         price1 = arrayOf(
-//            "Rp.100.000",
-            "Rp.50.000",
             "Free",
             "Free",
-        )
-
-        price2 = arrayOf(
-//            "Rp.80.000",
-            "Rp.120.000",
-            "Rp.15.000",
-            "Rp.100.000",
+            "Free",
+            "Free",
         )
 
         img1 = arrayOf(
-//            R.drawable.ic_music1,
-            R.drawable.ic_japanese,
-            R.drawable.ic_seminar,
-            R.drawable.ic_festival,
+            R.drawable.ic_music1,
+            R.drawable.ic_music2,
+            R.drawable.ic_music1,
+            R.drawable.ic_music2,
         )
 
-        img2 = arrayOf(
-//            R.drawable.ic_music2,
-            R.drawable.ic_japanese2,
-            R.drawable.ic_seminar2,
-            R.drawable.ic_festival2,
-        )
-
-        creatorEvent = arrayOf(
-            "Gatot",
-            "Gatot",
-            "Gatot",
-            "Gatot",
-        )
-
-        location = arrayOf(
-            "Malang",
-            "Medan",
-            "Pekanbaru",
-            "Jakarta",
-        )
-
-        desc = arrayOf(
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,",
-        )
-
-        dateEvent = arrayOf(
-            "01 Januari 2023",
-            "02 Januari 2023",
-            "03 Januari 2023",
-            "04 Januari 2023",
-        )
-
-        time = arrayOf(
-            "09.00-12.00",
-            "09.00-12.00",
-            "09.00-12.00",
-            "09.00-12.00",
-        )
-
-        type = arrayOf(
-            "Online",
-            "Offline",
-            "Online",
-            "Offline",
-        )
-
-
-
-        for (i in title.indices) {
-            val event = CategoriesEventData(
-                title[i],
-                seeAll[i],
+        for (i in titleEvent1.indices) {
+            val event = CategoriesMusicData(
                 img1[i],
                 titleEvent1[i],
                 price1[i],
-                img2[i],
-                titleEvent2[i],
-                price2[i],
-
-//                creatorEvent[i],
-//                location[i],
-//                desc[i],
-//                dateEvent[i],
-//                time[i],
-//                type[i]
                 )
-            eventArrayList.add(event)
+            musicArrayList.add(event)
         }
     }
+
+    private fun dataInitialize2(){
+
+        japaneseArrayList = arrayListOf<CategoriesJapaneseData>()
+
+
+        titleEvent1 = arrayOf(
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+        )
+
+        price1 = arrayOf(
+            "Free",
+            "Free",
+            "Free",
+            "Free",
+        )
+
+        img1 = arrayOf(
+            R.drawable.ic_japanese,
+            R.drawable.ic_japanese2,
+            R.drawable.ic_japanese,
+            R.drawable.ic_japanese2,
+        )
+
+        for (i in titleEvent1.indices) {
+            val japanese = CategoriesJapaneseData(
+                img1[i],
+                titleEvent1[i],
+                price1[i],
+            )
+            japaneseArrayList.add(japanese)
+        }
+
+    }
+
+    private fun dataInitialize3() {
+        seminarArrayList = arrayListOf<CategoriesSeminarData>()
+
+
+        titleEvent1 = arrayOf(
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+        )
+
+        price1 = arrayOf(
+            "Free",
+            "Free",
+            "Free",
+            "Free",
+        )
+
+        img1 = arrayOf(
+            R.drawable.ic_seminar,
+            R.drawable.ic_seminar2,
+            R.drawable.ic_seminar,
+            R.drawable.ic_seminar2,
+        )
+
+        for (i in titleEvent1.indices) {
+            val seminar = CategoriesSeminarData(
+                img1[i],
+                titleEvent1[i],
+                price1[i],
+            )
+            seminarArrayList.add(seminar)
+        }    }
+
+
+    private fun dataInitialize4() {
+        festivalArrayList = arrayListOf<CategoriesFestivalData>()
+
+
+        titleEvent1 = arrayOf(
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+            getString(R.string.title_event),
+        )
+
+        price1 = arrayOf(
+            "Free",
+            "Free",
+            "Free",
+            "Free",
+        )
+
+        img1 = arrayOf(
+            R.drawable.ic_festival,
+            R.drawable.ic_festival2,
+            R.drawable.ic_festival,
+            R.drawable.ic_festival2,
+        )
+
+        for (i in titleEvent1.indices) {
+            val festival = CategoriesFestivalData(
+                img1[i],
+                titleEvent1[i],
+                price1[i],
+            )
+            festivalArrayList.add(festival)
+        }
+    }
+
+
 }

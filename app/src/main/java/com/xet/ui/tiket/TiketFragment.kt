@@ -8,7 +8,6 @@ import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xet.R
-import com.xet.adapter.TabAdapter
 import com.xet.adapter.TicketAdapter
 import com.xet.data.TicketData
 import com.xet.databinding.FragmentTiketBinding
@@ -18,10 +17,11 @@ class TiketFragment : Fragment() {
     private var _binding: FragmentTiketBinding? = null
     private val binding get() = _binding!!
 
+//    private lateinit var adapterVIewPage: ViewPagerAdapter
+
     private lateinit var adapterTicket: TicketAdapter
     private lateinit var recyclerView: RecyclerView
     private lateinit var ticketDataArrayList: ArrayList<TicketData>
-    private lateinit var adapterTab : TabAdapter
 
     lateinit var img: Array<Int>
     lateinit var img2: Array<Int>
@@ -44,6 +44,14 @@ class TiketFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+//        adapterVIewPage = ViewPagerAdapter(this)
+
+//        with(binding){
+//            viewPager.adapter = adapterVIewPage
+//
+//            TabLayoutMediator(tabLayout, viewPager) { _, _ -> }.attach()
+//
+//        }
 
 
         dataInitialize()

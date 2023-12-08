@@ -15,6 +15,18 @@
         android:theme="@style/Base.Theme.XET"
         tools:targetApi="31">
         <activity
+            android:name=".ui.home.categories.CategoriesFestival"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.categories.CategoriesSeminar"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.categories.CategoriesJapanese"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.categories.CategoriesMusic"
+            android:exported="false" />
+        <activity
             android:name=".DetailEventFragment"
             android:exported="false" />
         <activity
