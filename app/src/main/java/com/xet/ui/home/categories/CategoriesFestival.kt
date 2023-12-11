@@ -21,6 +21,14 @@ class CategoriesFestival : AppCompatActivity() {
     lateinit var titleEvent1 : Array<String>
     lateinit var price1 : Array<String>
 
+//    lateinit var creatorEvent: Array<String>
+//    lateinit var location: Array<String>
+//    lateinit var desc: Array<String>
+//    lateinit var dateEvent: Array<String>
+//    lateinit var time: Array<String>
+//    lateinit var type: Array<String>
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,11 +70,59 @@ class CategoriesFestival : AppCompatActivity() {
             R.drawable.ic_festival2,
         )
 
+//        creatorEvent = arrayOf(
+//            "Gatot",
+//            "Gatot",
+//            "Gatot",
+//            "Gatot"
+//        )
+//
+//        location = arrayOf(
+//            "Malang",
+//            "Malang",
+//            "Malang",
+//            "Malang"
+//        )
+//
+//        desc = arrayOf(
+//            "wkwkwkwkwkwkwkwkwkwkwkw",
+//            "wkwkwkwkwkwkwkwkwkwkwkw",
+//            "wkwkwkwkwkwkwkwkwkwkwkw",
+//            "wkwkwkwkwkwkwkwkwkwkwkw"
+//        )
+//
+//        dateEvent = arrayOf(
+//            "21 Agustus 2023",
+//            "21 Agustus 2023",
+//            "21 Agustus 2023",
+//            "21 Agustus 2023",
+//        )
+//
+//        time = arrayOf(
+//            "09.00",
+//            "09.00",
+//            "09.00",
+//            "09.00",
+//        )
+//
+//        type = arrayOf(
+//            "Offline",
+//            "Online",
+//            "Offline",
+//            "Online",
+//        )
+
         for (i in titleEvent1.indices) {
             val festival = CategoriesFestivalData(
                 img1[i],
                 titleEvent1[i],
                 price1[i],
+//                creatorEvent[i],
+//                location[i],
+//                desc[i],
+//                dateEvent[i],
+//                time[i],
+//                type[i]
             )
             festivalArrayList.add(festival)
         }

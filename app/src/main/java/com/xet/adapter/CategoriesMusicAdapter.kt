@@ -9,17 +9,21 @@ import androidx.recyclerview.widget.RecyclerView
 import com.xet.R
 import com.xet.data.CategoriesMusicData
 
-class CategoriesMusicAdapter(private val eventList: ArrayList<CategoriesMusicData>)
+class CategoriesMusicAdapter(
+    private val eventList: ArrayList<CategoriesMusicData>)
     : RecyclerView.Adapter<CategoriesMusicAdapter.MyViewHolder>() {
-
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
 //        val titleEventCategories = itemView.findViewById<TextView>(R.id.title_categories)
 //        val textSeeAll = itemView.findViewById<TextView>(R.id.tv_see_all)
 
-        val img1 = itemView.findViewById<ImageView>(R.id.iv_image_event_music)
-        val titleEvent1 = itemView.findViewById<TextView>(R.id.tv_title_music1)
-        val price1 = itemView.findViewById<TextView>(R.id.tv_price_music1)
+        val img1 = itemView.findViewById<ImageView>(R.id.iv_image_event)
+        val titleEvent1 = itemView.findViewById<TextView>(R.id.tv_title_event)
+        val price1 = itemView.findViewById<TextView>(R.id.tv_price_event)
+
+//        val img2 = itemView.findViewById<ImageView>(R.id.iv_image_categories_detail)
+//        val titleEvent2 = itemView.findViewById<TextView>(R.id.tv_title_categorie_detail)
+//        val desc = itemView.findViewById<TextView>(R.id.tv_desc_categories_detail)
 
 //        val img2 = itemView.findViewById<ImageView>(R.id.iv_image_event_music2)
 //        val titleEvent2 = itemView.findViewById<TextView>(R.id.tv_title_music2)
@@ -28,8 +32,9 @@ class CategoriesMusicAdapter(private val eventList: ArrayList<CategoriesMusicDat
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-       val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_categories_music, parent, false)
+       val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_categories_event,  parent, false)
         return MyViewHolder(itemView)
+
     }
 
     override fun getItemCount(): Int {

@@ -35,6 +35,10 @@ import java.time.chrono.JapaneseDate
 
 class HomeFragment : Fragment() {
 
+    companion object {
+        val INTENT_PARCELABLE = "OBJECT_INTENT"
+    }
+
     private var _binding: FragmentHomeBinding? = null
     private lateinit var recyclerView: RecyclerView
 
@@ -52,12 +56,12 @@ class HomeFragment : Fragment() {
     lateinit var titleEvent1 : Array<String>
     lateinit var price1 : Array<String>
 
-    lateinit var creatorEvent: Array<String>
-    lateinit var location: Array<String>
+//    lateinit var creatorEvent: Array<String>
+//    lateinit var location: Array<String>
     lateinit var desc: Array<String>
-    lateinit var dateEvent: Array<String>
-    lateinit var time: Array<String>
-    lateinit var type: Array<String>
+//    lateinit var dateEvent: Array<String>
+//    lateinit var time: Array<String>
+//    lateinit var type: Array<String>
 
     private val binding get() = _binding!!
     private lateinit var adapterImageSlider: ImageSlideAdapter
@@ -253,6 +257,12 @@ class HomeFragment : Fragment() {
                 img1[i],
                 titleEvent1[i],
                 price1[i],
+//                creatorEvent[i],
+//                location[i],
+//                desc[i],
+//                dateEvent[i],
+//                time[i],
+//                type[i]
                 )
             musicArrayList.add(event)
         }
@@ -289,6 +299,12 @@ class HomeFragment : Fragment() {
                 img1[i],
                 titleEvent1[i],
                 price1[i],
+//                creatorEvent[i],
+//                location[i],
+//                desc[i],
+//                dateEvent[i],
+//                time[i],
+//                type[i]
             )
             japaneseArrayList.add(japanese)
         }
@@ -325,6 +341,12 @@ class HomeFragment : Fragment() {
                 img1[i],
                 titleEvent1[i],
                 price1[i],
+//                creatorEvent[i],
+//                location[i],
+//                desc[i],
+//                dateEvent[i],
+//                time[i],
+//                type[i]
             )
             seminarArrayList.add(seminar)
         }    }
@@ -360,6 +382,12 @@ class HomeFragment : Fragment() {
                 img1[i],
                 titleEvent1[i],
                 price1[i],
+//                creatorEvent[i],
+//                location[i],
+//                desc[i],
+//                dateEvent[i],
+//                time[i],
+//                type[i]
             )
             festivalArrayList.add(festival)
         }

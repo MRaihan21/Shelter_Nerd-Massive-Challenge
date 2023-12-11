@@ -5,17 +5,21 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.TextView
 import com.xet.data.CategoriesMusicData
+import com.xet.databinding.ActivityEventDetailBinding
 import com.xet.ui.home.HomeFragment
 
 class ActivityEVentDetail : AppCompatActivity() {
+
+    private lateinit var binding : ActivityEventDetailBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_event_detail)
 
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
-//        val CategoriesMusicData = intent.getParcelableExtra<CategoriesMusicData>(HomeFragment.INTENT_PARCELABLE)
+        binding = ActivityEventDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
+        val CategoriesMusicData = intent.getParcelableExtra<CategoriesMusicData>(HomeFragment.INTENT_PARCELABLE)
 
         val creatorEvent = findViewById<TextView>(R.id.tv_creator)
         val location = findViewById<Button>(R.id.btn_location)

@@ -13,13 +13,13 @@ class CategoriesJapaneseAdapter(private val japaneseList: ArrayList<CategoriesJa
     : RecyclerView.Adapter<CategoriesJapaneseAdapter.MyViewHolder>(){
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
-        val img1 = itemView.findViewById<ImageView>(R.id.iv_image_event_japanese)
-        val titleEvent1 = itemView.findViewById<TextView>(R.id.tv_title_japanese1)
-        val price1 = itemView.findViewById<TextView>(R.id.tv_price_japanese1)
+        val img1 = itemView.findViewById<ImageView>(R.id.iv_image_event)
+        val titleEvent1 = itemView.findViewById<TextView>(R.id.tv_title_event)
+        val price1 = itemView.findViewById<TextView>(R.id.tv_price_event)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
-        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_categories_japanese, parent, false)
+        val itemView = LayoutInflater.from(parent.context).inflate(R.layout.item_categories_event, parent, false)
         return MyViewHolder(itemView)
     }
 
