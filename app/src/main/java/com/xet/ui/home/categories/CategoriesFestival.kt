@@ -1,9 +1,11 @@
 package com.xet.ui.home.categories
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.xet.MainActivity
 import com.xet.R
 import com.xet.adapter.CategoriesFestivalAdapter
 import com.xet.data.CategoriesFestivalData
@@ -32,7 +34,8 @@ class CategoriesFestival : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categories_festival)
+        binding = ActivityCategoriesFestivalBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         dataInitialize4()
 
@@ -42,6 +45,12 @@ class CategoriesFestival : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         adapterFestival = CategoriesFestivalAdapter(festivalArrayList)
         recyclerView.adapter = adapterFestival
+
+
+        binding.ivArrowBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

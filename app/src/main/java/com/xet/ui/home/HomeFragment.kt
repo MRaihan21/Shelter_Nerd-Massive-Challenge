@@ -15,6 +15,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import androidx.viewpager2.widget.ViewPager2
 import com.xet.ActivityEVentDetail
+import com.xet.Music1
 import com.xet.R
 import com.xet.adapter.CategoriesFestivalAdapter
 import com.xet.adapter.CategoriesJapaneseAdapter
@@ -25,11 +26,15 @@ import com.xet.data.CategoriesJapaneseData
 import com.xet.data.CategoriesMusicData
 import com.xet.data.CategoriesSeminarData
 import com.xet.data.ImageSliderData
+import com.xet.databinding.ActivityMusik1Binding
+import com.xet.databinding.ActivityMusik2Binding
 import com.xet.databinding.FragmentHomeBinding
 import com.xet.ui.home.categories.CategoriesFestival
 import com.xet.ui.home.categories.CategoriesJapanese
 import com.xet.ui.home.categories.CategoriesMusic
 import com.xet.ui.home.categories.CategoriesSeminar
+import com.xet.ui.home.categories.musik1
+import com.xet.ui.home.categories.musik2
 import java.time.chrono.JapaneseDate
 
 
@@ -56,7 +61,7 @@ class HomeFragment : Fragment() {
     lateinit var titleEvent1 : Array<String>
     lateinit var price1 : Array<String>
 
-//    lateinit var creatorEvent: Array<String>
+    //    lateinit var creatorEvent: Array<String>
 //    lateinit var location: Array<String>
     lateinit var desc: Array<String>
 //    lateinit var dateEvent: Array<String>
@@ -121,14 +126,14 @@ class HomeFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        dataInitialize()
-
-        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
-        recyclerView = view.findViewById(R.id.rv_categories_music)
-        recyclerView.layoutManager = layoutManager
-        recyclerView.setHasFixedSize(true)
-        adapterMusic = CategoriesMusicAdapter(musicArrayList)
-        recyclerView.adapter = adapterMusic
+//        dataInitialize()
+//
+//        val layoutManager = LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL, false)
+//        recyclerView = view.findViewById(R.id.rv_categories_music)
+//        recyclerView.layoutManager = layoutManager
+//        recyclerView.setHasFixedSize(true)
+//        adapterMusic = CategoriesMusicAdapter(musicArrayList)
+//        recyclerView.adapter = adapterMusic
 
         dataInitialize2()
 
@@ -162,7 +167,11 @@ class HomeFragment : Fragment() {
             btnNotif.setOnClickListener {
                 moveNotif()
             }
-            tvSeeAll.setOnClickListener {
+//            tvSeeAll.setOnClickListener {
+//                val intent = Intent(requireContext(), CategoriesMusic::class.java)
+//                startActivity(intent)
+//            }
+            tvSeeAll0.setOnClickListener {
                 val intent = Intent(requireContext(), CategoriesMusic::class.java)
                 startActivity(intent)
             }
@@ -176,6 +185,14 @@ class HomeFragment : Fragment() {
             }
             tvSeeAll4.setOnClickListener {
                 val intent = Intent(requireContext(), CategoriesFestival::class.java)
+                startActivity(intent)
+            }
+            ivImageEvent.setOnClickListener {
+                val intent = Intent(requireContext(), musik1::class.java)
+                startActivity(intent)
+            }
+            ivImageEvent2.setOnClickListener {
+                val intent = Intent(requireContext(), musik2::class.java)
                 startActivity(intent)
             }
 
@@ -263,7 +280,7 @@ class HomeFragment : Fragment() {
 //                dateEvent[i],
 //                time[i],
 //                type[i]
-                )
+            )
             musicArrayList.add(event)
         }
     }

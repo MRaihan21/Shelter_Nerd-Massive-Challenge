@@ -15,6 +15,24 @@
         android:theme="@style/Base.Theme.XET"
         tools:targetApi="31">
         <activity
+            android:name=".Payment"
+            android:exported="false" />
+        <activity
+            android:name=".Creator"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.categories.musik2"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.categories.musik1"
+            android:exported="false" />
+        <activity
+            android:name=".music2"
+            android:exported="false" />
+        <activity
+            android:name=".Music1"
+            android:exported="false" />
+        <activity
             android:name=".ui.home.categories.CategoriesFestival"
             android:exported="false" />
         <activity

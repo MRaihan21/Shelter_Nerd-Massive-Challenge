@@ -11,7 +11,7 @@ import com.xet.data.CategoriesFestivalData
 import com.xet.data.CategoriesSeminarData
 
 class CategoriesFestivalAdapter (private val festivalList: ArrayList<CategoriesFestivalData>)
-: RecyclerView.Adapter<CategoriesFestivalAdapter.MyViewHolder>(){
+    : RecyclerView.Adapter<CategoriesFestivalAdapter.MyViewHolder>(){
 
     class MyViewHolder(itemView: View): RecyclerView.ViewHolder(itemView) {
         val img1 = itemView.findViewById<ImageView>(R.id.iv_image_event)

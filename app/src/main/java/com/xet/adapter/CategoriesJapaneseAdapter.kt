@@ -31,8 +31,8 @@ class CategoriesJapaneseAdapter(private val japaneseList: ArrayList<CategoriesJa
 
         val currentItem = japaneseList[position]
 
-        holder.titleEvent1.text = currentItem.titleEvent2
-        holder.img1.setImageResource(currentItem.imageCategories2)
-        holder.price1.text = currentItem.price2
+        holder.titleEvent1.text = currentItem.titleEvent1
+        holder.img1.setImageResource(currentItem.imageCategories1)
+        holder.price1.text = currentItem.price1
     }
 }

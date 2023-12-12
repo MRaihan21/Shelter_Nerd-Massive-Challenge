@@ -1,9 +1,11 @@
 package com.xet.ui.home.categories
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.xet.MainActivity
 import com.xet.R
 import com.xet.adapter.CategoriesSeminarAdapter
 import com.xet.data.CategoriesSeminarData
@@ -30,7 +32,8 @@ class CategoriesSeminar : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categories_seminar)
+        binding = ActivityCategoriesSeminarBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         dataInitialize3()
 
@@ -40,6 +43,11 @@ class CategoriesSeminar : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         adapterSeminar = CategoriesSeminarAdapter(seminarArrayList)
         recyclerView.adapter = adapterSeminar
+
+        binding.ivArrowBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

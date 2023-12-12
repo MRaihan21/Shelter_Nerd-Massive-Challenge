@@ -15,5 +15,4 @@ data class CategoriesMusicData(
 //    var date: String,
 //    var time: String,
 //    var type: String,
-
-) : Parcelable
+    ) : Parcelable

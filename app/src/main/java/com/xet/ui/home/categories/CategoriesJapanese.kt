@@ -1,9 +1,11 @@
 package com.xet.ui.home.categories
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.xet.MainActivity
 import com.xet.R
 import com.xet.adapter.CategoriesJapaneseAdapter
 import com.xet.data.CategoriesJapaneseData
@@ -31,7 +33,8 @@ class CategoriesJapanese : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categories_japanese)
+        binding = ActivityCategoriesJapaneseBinding.inflate(layoutInflater)
+        setContentView(binding.root)
 
         dataInitialize2()
 
@@ -41,6 +44,11 @@ class CategoriesJapanese : AppCompatActivity() {
         recyclerView.setHasFixedSize(true)
         adapterJapanese = CategoriesJapaneseAdapter(japaneseArrayList)
         recyclerView.adapter = adapterJapanese
+
+        binding.ivArrowBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
     }
 

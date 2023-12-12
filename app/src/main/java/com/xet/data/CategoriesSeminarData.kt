@@ -1,5 +1,9 @@
 package com.xet.data
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 data class CategoriesSeminarData(
     var imageCategories1: Int,
     var titleEvent1: String,
@@ -11,4 +15,4 @@ data class CategoriesSeminarData(
 //    var date: String,
 //    var time: String,
 //    var type: String,
-)
+    ) : Parcelable

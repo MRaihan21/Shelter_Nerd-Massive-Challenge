@@ -36,9 +36,9 @@ class DetailEventFragment : Fragment() {
             btnBuyNow.setOnClickListener {
                 movePayment()
             }
-            btnLocation.setOnClickListener {
-                moveLocation()
-            }
+//            btnLocation.setOnClickListener {
+//                moveLocation()
+//            }
             creator.setOnClickListener {
                 moveCreator()
             }

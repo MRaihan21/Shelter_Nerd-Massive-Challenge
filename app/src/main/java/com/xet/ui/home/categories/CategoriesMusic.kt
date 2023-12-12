@@ -6,6 +6,7 @@ import android.os.Bundle
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.xet.MainActivity
 import com.xet.R
 import com.xet.adapter.CategoriesMusicAdapter
 import com.xet.data.CategoriesMusicData
@@ -24,7 +25,7 @@ class CategoriesMusic : AppCompatActivity() {
     lateinit var titleEvent1 : Array<String>
     lateinit var price1 : Array<String>
 
-//    lateinit var creatorEvent: Array<String>
+    //    lateinit var creatorEvent: Array<String>
 //    lateinit var location: Array<String>
     lateinit var desc: Array<String>
 //    lateinit var dateEvent: Array<String>
@@ -33,7 +34,13 @@ class CategoriesMusic : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_categories_music)
+        binding = ActivityCategoriesMusicBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        binding.ivArrowBack.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            startActivity(intent)
+        }
 
         dataInitialize()
 
