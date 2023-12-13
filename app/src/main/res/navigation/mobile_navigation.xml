@@ -22,7 +22,11 @@
         android:id="@+id/navigation_tiket"
         android:name="com.xet.ui.tiket.TiketFragment"
         android:label="@string/title_tiket"
-        tools:layout="@layout/fragment_tiket" />
+        tools:layout="@layout/fragment_tiket" >
+        <action
+            android:id="@+id/action_navigation_tiket_to_myTicket"
+            app:destination="@id/myTicket" />
+    </fragment>
 
     <fragment
         android:id="@+id/navigation_profile"
@@ -142,6 +146,11 @@
             android:id="@+id/action_detailEventFragment2_to_creatorFragment"
             app:destination="@id/creatorFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/myTicket"
+        android:name="com.xet.ui.tiket.MyTicket"
+        android:label="fragment_my_ticket"
+        tools:layout="@layout/fragment_my_ticket" />
 
 
 </navigation>

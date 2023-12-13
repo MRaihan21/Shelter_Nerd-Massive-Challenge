@@ -111,12 +111,24 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/btn_transaction" />
 
+<!--    <com.google.android.material.button.MaterialButton-->
+<!--        android:id="@+id/btn_following"-->
+<!--        style="@style/SettingButton"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:text="Following"-->
+<!--        android:textAlignment="textStart"-->
+<!--        app:icon="@drawable/ic_feedbacksetting"-->
+<!--        app:layout_constraintEnd_toEndOf="parent"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/btn_feedback" />-->
+
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="40dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
         android:text="Help Center"
         android:textSize="14sp"
         android:textStyle="bold"

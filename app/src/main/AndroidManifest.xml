@@ -15,6 +15,9 @@
         android:theme="@style/Base.Theme.XET"
         tools:targetApi="31">
         <activity
+            android:name=".ui.profile.myprofile.Following"
+            android:exported="false" />
+        <activity
             android:name=".Payment"
             android:exported="false" />
         <activity

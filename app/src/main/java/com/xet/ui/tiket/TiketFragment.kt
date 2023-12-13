@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xet.R
@@ -43,6 +44,12 @@ class TiketFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        binding.apply {
+            ivMyticket1.setOnClickListener {
+                moveMyTicket()
+            }
+        }
 
 //        adapterVIewPage = ViewPagerAdapter(this)
 
@@ -89,5 +96,10 @@ class TiketFragment : Fragment() {
             )
             ticketDataArrayList.add(ticketData)
         }
+    }
+
+    private fun moveMyTicket(){
+        val action = TiketFragmentDirections.actionNavigationTiketToMyTicket()
+        findNavController().navigate(action)
     }
 }

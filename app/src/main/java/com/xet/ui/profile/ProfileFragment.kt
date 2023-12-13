@@ -15,6 +15,8 @@ import com.xet.ForgotPasswordActivity
 import com.xet.LoginActivity
 import com.xet.databinding.FragmentProfileBinding
 import com.xet.ui.profile.myprofile.ChangePasswordFragment
+import com.xet.ui.profile.myprofile.Following
+import com.xet.ui.profile.myprofile.FollowingFragment
 
 class ProfileFragment : Fragment() {
 
@@ -59,6 +61,10 @@ class ProfileFragment : Fragment() {
             editeProfile.setOnClickListener {
                 moveEditProfile()
             }
+//            binding.btnFollowing.setOnClickListener {
+//                val intent = Intent(requireContext(), Following::class.java)
+//                startActivity(intent)
+//            }
         }
     }
 
