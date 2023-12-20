@@ -147,6 +147,7 @@ class ActivityAllMusic : AppCompatActivity() {
                 type[i]
             )
             musicList.add(music)
+
         }
     }
 }

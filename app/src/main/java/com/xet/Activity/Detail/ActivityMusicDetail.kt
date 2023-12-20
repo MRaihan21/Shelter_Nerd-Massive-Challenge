@@ -7,6 +7,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import com.xet.Activity.Detail.other.CreatorDetailActivity
 import com.xet.Activity.Detail.other.PaymentActivity
+import com.xet.MapsActivity
 import com.xet.Models.CreatorModel
 import com.xet.Models.MusicModel
 import com.xet.R
@@ -72,6 +73,12 @@ class ActivityMusicDetail : AppCompatActivity() {
         date.text = Music.date
         time.text = Music.time
         type.text = Music.type
+
+        binding.btnLocation.setOnClickListener {
+            val intent = Intent(this, MapsActivity::class.java)
+            startActivity(intent)
+
+        }
 
     }
 
