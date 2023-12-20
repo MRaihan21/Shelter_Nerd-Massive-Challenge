@@ -18,6 +18,10 @@ class ChangePasswordActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_change_password)
 
+        binding.ivArrowBack.setOnClickListener {
+            onBackPressed()
+        }
+
         auth = FirebaseAuth.getInstance()
 
         setContentView(binding.root)
@@ -29,27 +33,27 @@ class ChangePasswordActivity : AppCompatActivity() {
             val confirmpass = binding.confirmpass.text.toString()
 
             if (newpass.isEmpty()) {
-                binding.newPassword.error = "Password Tidak Boleh Kosong"
+                binding.newPassword.error = "Password tidak boleh kosong"
                 binding.newPassword.requestFocus()
                 return@setOnClickListener
             }
             if (confirmpass.isEmpty()) {
-                binding.confirmpass.error = "Password Tidak Sama"
+                binding.confirmpass.error = "password tidak Sama"
                 binding.confirmpass.requestFocus()
                 return@setOnClickListener
             }
             if (newpass.length < 8) {
-                binding.newPassword.error = "Password Minimal 8 Karakter"
+                binding.newPassword.error = "Password minimal 8 karakter"
                 binding.newPassword.requestFocus()
                 return@setOnClickListener
             }
             if (confirmpass.length < 8) {
-                binding.confirmpass.error = "Password Minimal 8 Karakter"
+                binding.confirmpass.error = "Password minimal 8 karakter"
                 binding.confirmpass.requestFocus()
                 return@setOnClickListener
             }
             if (newpass != confirmpass) {
-                binding.confirmpass.error = "Password Minimal 8 Karakter"
+                binding.confirmpass.error = "Password minimal 8 karakter"
                 binding.confirmpass.requestFocus()
                 return@setOnClickListener
             }
@@ -83,10 +87,6 @@ class ChangePasswordActivity : AppCompatActivity() {
                 }
 
             }
-            binding.ivArrowBack.setOnClickListener {
-                finish()
-            }
-
         }
     }
 }

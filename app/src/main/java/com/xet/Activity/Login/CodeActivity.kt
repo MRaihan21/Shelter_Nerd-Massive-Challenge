@@ -22,7 +22,7 @@ class CodeActivity : AppCompatActivity() {
             startActivity(intent)
         }
         binding.ivArrowBack.setOnClickListener {
-            finish()
+            onBackPressed()
         }
 
 

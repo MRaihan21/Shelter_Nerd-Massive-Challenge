@@ -23,8 +23,7 @@ class ForgotPasswordActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.ivArrowBack.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
+            onBackPressed()
         }
 
         binding.btnLanj.setOnClickListener {
@@ -32,12 +31,12 @@ class ForgotPasswordActivity : AppCompatActivity() {
             val edtEmail = binding.edtEmail
 
             if (email.isEmpty()){
-                edtEmail.error = "Email Tidak Boleh Kosong"
+                edtEmail.error = "Email tidak boleh kosong"
                 edtEmail.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                edtEmail.error = "Email Tidak Valid"
+                edtEmail.error = "Email tidak valid"
                 edtEmail.requestFocus()
                 return@setOnClickListener
             }
@@ -52,10 +51,6 @@ class ForgotPasswordActivity : AppCompatActivity() {
                 }
             }
 
-        }
-
-        binding.ivArrowBack.setOnClickListener {
-            finish()
         }
 
     }

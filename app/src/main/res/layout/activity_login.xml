@@ -79,10 +79,11 @@
     <Button
         android:id="@+id/btn_login"
         style="@style/button"
+        android:backgroundTint="@color/red2"
+        android:background="@drawable/round_back_red2"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="76dp"
-        android:backgroundTint="@color/red2"
         android:text="Login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

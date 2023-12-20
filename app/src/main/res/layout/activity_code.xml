@@ -146,6 +146,8 @@
         style="@style/button"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:backgroundTint="@color/red2"
+        android:background="@drawable/round_back_red2"
         android:layout_marginTop="48dp"
         android:text="Next"
         app:layout_constraintEnd_toEndOf="parent"

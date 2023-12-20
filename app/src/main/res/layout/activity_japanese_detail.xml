@@ -123,6 +123,7 @@
             android:background="@drawable/round_peach"
             android:padding="8dp"
             android:text="17 Agus 2023"
+            android:textAlignment="center"
             android:textStyle="bold"
             android:textSize="11sp"
             app:layout_constraintEnd_toStartOf="@+id/tv_time"
@@ -139,6 +140,7 @@
             android:text="09.00-10-00"
             android:textStyle="bold"
             android:textSize="11sp"
+            android:textAlignment="center"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_desc_detail" />
@@ -152,6 +154,7 @@
             android:background="@drawable/round_peach"
             android:padding="8dp"
             android:text="Offline"
+            android:textAlignment="center"
             android:textStyle="bold"
             android:textSize="11sp"
             app:layout_constraintEnd_toEndOf="parent"
@@ -207,7 +210,7 @@
                 android:id="@+id/tv_see_profile"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="270dp"
+                android:layout_marginStart="280dp"
                 android:layout_marginTop="40dp"
                 android:src="@drawable/ic_editeprofile"
                 />

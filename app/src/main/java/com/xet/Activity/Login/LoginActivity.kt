@@ -29,26 +29,27 @@ class LoginActivity : AppCompatActivity() {
             val password = binding.pass.text.toString()
 
             if (email.isEmpty()){
-                binding.email.error = "Email Tidak Berhasil"
+                binding.email.error = "Email harus diisi"
                 binding.email.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                binding.email.error = "Email Tidak Valid"
+                binding.email.error = "Email tidak valid"
                 binding.email.requestFocus()
                 return@setOnClickListener
             }
             if (password.isEmpty()){
-                binding.pass.error = "Email Harus Diisi"
+                binding.pass.error = "Password harus diisi"
                 binding.pass.requestFocus()
                 return@setOnClickListener
             }
             if (password.length < 8){
-                binding.pass.error = "Password Minimal 8 Karakter"
+                binding.pass.error = "Password minimal 8 karakter"
                 binding.pass.requestFocus()
                 return@setOnClickListener
             }
             LoginFirebase(email,password)}
+
         binding.tvForgotPassword.setOnClickListener {
             val intent = Intent(this, ForgotPasswordActivity::class.java)
             startActivity(intent)
@@ -68,7 +69,7 @@ class LoginActivity : AppCompatActivity() {
                 if (it.isSuccessful){
                     val intent = Intent(this, MainActivity::class.java)
                     startActivity(intent)
-                    Toast.makeText(this@LoginActivity, "Anda Berhasil Login", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(this@LoginActivity, "Berhasil Login", Toast.LENGTH_SHORT).show()
                 }else{
                     Toast.makeText(this, "${it.exception?.message}", Toast.LENGTH_SHORT).show()
                 }

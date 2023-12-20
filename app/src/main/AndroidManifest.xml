@@ -14,7 +14,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.XET"
         tools:targetApi="31">
-
+        <activity
+            android:name=".Activity.Login.IntroSlider"
+            android:exported="false" />
         <!--
              TODO: Before you run your application, you need a Google Maps API key.
 
@@ -31,7 +33,7 @@
             android:value="AIzaSyAz6qfbB2U87Wo4JC1QHQPnBTkopadSkmE" />
 
         <activity
-            android:name=".MapsActivity"
+            android:name=".Activity.Detail.other.MapsActivity"
             android:exported="false"
             android:label="@string/title_activity_maps" />
         <!--

@@ -24,49 +24,50 @@ class RegisterActivity : AppCompatActivity() {
 
 
         binding.btnRegis.setOnClickListener {
+            val username = binding.username.text.toString()
             val email = binding.email.text.toString()
             val password = binding.pass.text.toString()
             val confpass = binding.konfPass.text.toString()
 
+            if (username.isEmpty()){
+                binding.username.error = "Username harus diisi"
+                binding.username.requestFocus()
+                return@setOnClickListener
+            }
             if (email.isEmpty()){
-                binding.email.error = "Email Tidak Berhasil"
+                binding.email.error = "Email harus diisi"
                 binding.email.requestFocus()
                 return@setOnClickListener
             }
             if (!Patterns.EMAIL_ADDRESS.matcher(email).matches()){
-                binding.email.error = "Email Tidak Valid"
+                binding.email.error = "Email tidak valid"
                 binding.email.requestFocus()
                 return@setOnClickListener
             }
             if (password.isEmpty()){
-                binding.pass.error = "Email Harus Diisi"
+                binding.pass.error = "Password harus diisi"
                 binding.pass.requestFocus()
                 return@setOnClickListener
             }
             if (password.length < 8){
-                binding.pass.error = "Password Minimal 8 Karakter"
+                binding.pass.error = "Password minimal 8 karakter"
                 binding.pass.requestFocus()
                 return@setOnClickListener
             }
             if (confpass.isEmpty()){
-                binding.konfPass.error = "Password Tidak Sama"
+                binding.konfPass.error = "Password tidak sama"
                 binding.konfPass.requestFocus()
                 return@setOnClickListener
             }
             if (password != confpass){
-                binding.konfPass.error = "Password Tidak Sama"
+                binding.konfPass.error = "Password tidak sama"
                 binding.konfPass.requestFocus()
                 return@setOnClickListener
             }
             RegiterFirebase(email,password,confpass)}
 
         binding.ivArrowBack.setOnClickListener {
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
-
-        binding.ivArrowBack.setOnClickListener {
-            finish()
+           onBackPressed()
         }
     }
 
