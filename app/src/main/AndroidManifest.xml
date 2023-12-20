@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:dataExtractionRules="@xml/data_extraction_rules"
+        android:fullBackupContent="@xml/backup_rules"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.XET"
+        tools:targetApi="31">
+        <activity
+            android:name=".Activity.Detail.MapActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.other.Feedback2Activity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.other.Feedback1Actiivty"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Detail.CreatorDetailActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.DetailProfile.DetailProfile"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.DetailProfile.FeedbackActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.profile.DetailProfile.TransactionHistory"
+            android:exported="false" />
+        <activity
+            android:name=".Adapter.ImageSliderAdapter"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ticket.MyTicket.MyTicketActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.home.other.NotifikasiActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.All.ActivityAllFestival"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.All.ActivityAllSeminar"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.All.ActivityAllJapanese"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.All.ActivityAllMusic"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Detail.ActivityFestivalDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Detail.ActivitySeminarDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Detail.ActivityJapaneseDetail"
+            android:exported="false" /> <!-- <activity -->
+        <!-- android:name=".Activity.SplashActivity" -->
+        <!-- android:exported="false" /> -->
+        <activity
+            android:name=".Activity.MainActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Login.ChangePasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Login.CodeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Login.ForgotPasswordActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Login.RegisterActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Login.LoginActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Detail.ActivityMusicDetail"
+            android:exported="false" />
+        <activity
+            android:name=".Activity.Login.SplashActivity"
+            android:exported="true"
+            android:label="@string/app_name">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+    </application>
+
+</manifest>
