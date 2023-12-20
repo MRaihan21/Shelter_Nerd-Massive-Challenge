@@ -5,10 +5,10 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import com.xet.Models.JapaneseModel
+import com.xet.Activity.Detail.other.CreatorDetailActivity
+import com.xet.Activity.Detail.other.PaymentActivity
 import com.xet.Models.SeminarModel
 import com.xet.R
-import com.xet.databinding.ActivityJapaneseDetailBinding
 import com.xet.databinding.ActivitySeminarDetailBinding
 import com.xet.ui.home.HomeFragment
 
@@ -29,6 +29,9 @@ class ActivitySeminarDetail : AppCompatActivity() {
         }
         binding.creator.setOnClickListener{
             startActivity(Intent(this, CreatorDetailActivity::class.java))
+        }
+        binding.btnBuyNow.setOnClickListener {
+            startActivity(Intent(this, PaymentActivity::class.java))
         }
 
         val seminar = intent.getParcelableExtra<SeminarModel>(HomeFragment.INTENT_PARCELABLE)

@@ -1,10 +1,7 @@
-package com.xet.Activity.Detail
+package com.xet.Activity.Detail.other
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.xet.Adapter.CreatorAdapter

@@ -61,10 +61,7 @@ class FeedbackActivity : AppCompatActivity() {
             "Gatot",
         )
         image = arrayOf(
-            R.drawable.ic_festival01,
-            R.drawable.ic_festival01,
-            R.drawable.ic_festival01,
-            R.drawable.ic_festival01,
+            R.drawable.ic_music,
         )
         rating = arrayOf(
            5F,

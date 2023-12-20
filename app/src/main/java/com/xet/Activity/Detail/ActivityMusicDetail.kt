@@ -5,13 +5,9 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.TextView
-import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.xet.Adapter.CreatorAdapter
-import com.xet.Adapter.MusicAdapter
+import com.xet.Activity.Detail.other.CreatorDetailActivity
+import com.xet.Activity.Detail.other.PaymentActivity
 import com.xet.Models.CreatorModel
-import com.xet.Models.JapaneseModel
 import com.xet.Models.MusicModel
 import com.xet.R
 import com.xet.databinding.ActivityMusicDetailBinding
@@ -41,7 +37,11 @@ class ActivityMusicDetail : AppCompatActivity() {
 
         binding.creator.setOnClickListener{
             startActivity(Intent(this, CreatorDetailActivity::class.java))
-    }
+        }
+
+        binding.btnBuyNow.setOnClickListener {
+            startActivity(Intent(this, PaymentActivity::class.java))
+        }
 
 
 
